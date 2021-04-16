@@ -40,6 +40,4 @@ print(var)
 var ='Hello world'[2:]
 print(var)
 
-# Slicing is a simple way to get a substring from a larger string. 
-
-
+# Slicing is a simple way to get a substring from a larger string.
