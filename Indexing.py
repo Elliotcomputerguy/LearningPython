@@ -5,7 +5,16 @@
 
 var = 'Elliot'
 print(var[0],var[1],var[2],var[3],var[4],var[5])
-var = 'Elliot'[1]
+var = 'Elliot'[0]
+print(var)
+
+# #Negative Indexes
+# Negative indexes start at the end of a string and go backwards. The negative index -1 is the index of the last character in a string. 
+# The index -2 is the index of the second from last character, and so on. 
+
+var = 'Elliot'
+print(var[-1],var[-2],var[-3],var[-4],var[-5], var[-6])
+
 
 
 
