@@ -13,3 +13,9 @@ print(var)
 myName = input()
 print('Hello, ' + myName)
 print('Hello', myName)
+
+# The input() function can only accept strings in order to convert to integers we can convert the variable into a integer variable 
+
+myNum = input()
+myNum = int(myNum)
+print(myNum)
