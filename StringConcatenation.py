@@ -6,3 +6,6 @@ print(var)
 
 var = 'Hello ' + 'World'
 print(var)
+
+var = ('Hello' + ' ' + 'world')
+print(var)
