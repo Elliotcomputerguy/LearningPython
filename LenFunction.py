@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-#The Len() function accepts a string value argument and returns an integer value of how many characters are in the string. 
+# The Len() function accepts a string value argument and returns an integer value of how many characters are in the string. 
 
 var = len('Hello')
 print('length of characters stored in var =', var)
