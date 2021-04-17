@@ -12,4 +12,4 @@ print(var)
 
 myName = input()
 print('Hello, ' + myName)
-#  
+print('Hello', myName)
