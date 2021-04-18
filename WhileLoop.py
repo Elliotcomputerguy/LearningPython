@@ -30,3 +30,12 @@ timestable = int(timestable)
 while i <=10:
     print(timestable, 'x', i, '=', i * timestable )
     i = i + 1
+
+# A for loop would work much better here as it is designed to iterate through strings and lists.
+print('--------------------------------------')
+i = 0
+var = input('Enter a string value ie your name:')
+while i < len(var):
+    letter = var[i]
+    print ('The letter is', letter)
+    i = i + 1
