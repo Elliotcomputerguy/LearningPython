@@ -13,3 +13,20 @@ var = var.lower()
 print(var)
 print(var.upper())
 print(var)
+
+# #The find() string method
+# Just like upper() lower() method can be called on sting values, the find() method is a string method. The find() method takes one
+# string argument and returns the integer index of where that string appears in the method's string.
+
+print('----------------------')
+var = 'Hello'
+find = var.find('H')
+print(find)
+find = var.find('e')
+print(find)
+
+# If the string argument cannot be found, the find() method returns a -1. You can pass more than one character. The integer that find() returns
+# will be the index of the first character where the argument is found.
+
+find = var.find('llo')
+print(find)
