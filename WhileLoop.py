@@ -25,8 +25,8 @@
 # My times table program. I convert input() into integer to allow the end user to choose what times table to do.
 
 i = 1
-timestable = input()
+timestable = input('Enter your times table of choice:')
 timestable = int(timestable)
 while i <=10:
-    print('10 x', i, '=', i * timestable )
+    print(timestable, 'x', i, '=', i * timestable )
     i = i + 1
