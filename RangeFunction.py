@@ -17,6 +17,7 @@ for i in range(3, 8):
     print(i)
 
 # Another example below where we are passing an argument into the len() function and using the return value as an argument into the range() function.
+
 print('-----------------------------')
 LETTERS = 'ABCDEFGHIJKLMOPQRSTUVWXYZ'
 print(len(LETTERS))
