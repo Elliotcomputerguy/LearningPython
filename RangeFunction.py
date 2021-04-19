@@ -15,3 +15,11 @@ for i in range(6):
 print('---------------------------')
 for i in range(3, 8):
     print(i)
+
+# Another example below where we are passing an argument into the len() function and using the return value as an argument into the range() function.
+print('-----------------------------')
+LETTERS = 'ABCDEFGHIJKLMOPQRSTUVWXYZ'
+print(len(LETTERS))
+print('-----------------------------')
+for key in range (len(LETTERS)):
+    print(key)
