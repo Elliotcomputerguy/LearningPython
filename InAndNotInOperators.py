@@ -9,3 +9,9 @@ if 'Hello' in var:
     print('True')
 else:
     print('False')
+
+if 'Hello' not in var:
+    print('True')
+else:
+    print('False')
+    
