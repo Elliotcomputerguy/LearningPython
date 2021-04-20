@@ -31,13 +31,26 @@ print(var)
 # If you leave out the first index of a slice, python will automatically think you want to specify index 0 for the first index. 
 # The expression 'Hello'[0:3] and 'Hello'[:3] evaluate to the same string. 'Hel'
 
-var = 'Hello world'[:3]
+# to help make it more visibly clearer. Put a 0 in if the slice is after the colon. Then take it out. 
+var = 'Hello world'[:3] # <-- Get only characters before 3 = 'Hel'
 print(var)
 
 # If you leave out the second index, python will automatically think you want to specify the rest of the string. 
 # 'Hello'[2:] evaluates to the value 'llo world'
 
-var ='Hello world'[2:]
+var ='Hello world'[2:] # <-- Get characters only After 2 = 'llo world'
 print(var)
+
+
+# #Reassigning characters in strings
+# While you can reassign items in a list, you cannot assign a character in a string value. You have to use slicing instead
+
+var = 'Hello'
+var = var[:0] + 'G' + var[1:]
+print(var)
+
+print('--------------------------')
+var = 'string'
+var = var[:4] + 'x' + var[5:]
 
 # Slicing is a simple way to get a substring from a larger string.
