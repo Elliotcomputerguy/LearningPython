@@ -24,3 +24,13 @@ print(len(LETTERS))
 print('-----------------------------')
 for key in range (len(LETTERS)):
     print(key)
+
+# Grow a list using a for loop statement with the range function.
+myList = []
+for i in range(10):
+    myList = myList + [i]
+print(myList)
+
+# How ever it is easier to use the list() function and call the range() function. 
+myList = list(range(10))
+print(myList)
