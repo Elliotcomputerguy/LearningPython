@@ -38,4 +38,14 @@ print(find)
 myList = ['item1', 'item2', 'item3']
 print('-'.join(myList).title())
 
+# The .replace() method. Replces the word five with millions of from the string 'five text'
 
+quote = 'five text'
+print(quote.replace('five', 'millions of'))
+print(quote)
+
+#capatalize()
+
+#strip()
+
+#replace(old, new [, max])
