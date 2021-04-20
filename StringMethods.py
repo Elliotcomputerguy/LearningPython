@@ -30,3 +30,12 @@ print(find)
 
 find = var.find('llo')
 print(find)
+
+# The .Join() and title() string method's
+
+# The join() method pretty much says it in the title it joins strings/lists etc together. You can place other strings inbetween them.  
+# The title menthod also says it in the name and will uppercase the first character of each item value or string. 
+myList = ['item1', 'item2', 'item3']
+print('-'.join(myList).title())
+
+
