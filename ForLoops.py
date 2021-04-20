@@ -31,3 +31,10 @@ num = int(num)
 # Iterate 10 times from i = 1 to 10
 for i in range(1, 11):
    print(num, 'x', i, '=', num*i)
+
+# Grow a list using a for loop statement
+myList = []
+for i in range(10):
+    myList = myList + [i]
+print(myList)
+
