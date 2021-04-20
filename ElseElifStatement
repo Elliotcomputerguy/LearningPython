@@ -12,7 +12,7 @@ print('Done')
 
 # #elif statement
 # the elif statement like a if statement has a condition, like an else statement it follows an if (or another elif) statement and executes
-# if the revious if (or elif) statement's condition is False. You can read a if,elif and else statement as "if this condition is true, run this block \n
+# if the previous if (or elif) statement's condition is False. You can read a if,elif and else statement as "if this condition is true, run this block \n
 # Or else, check if this next condition is True. Or else, run this last block." 
 
 numberOfCars = input('How many cars do you own:')
