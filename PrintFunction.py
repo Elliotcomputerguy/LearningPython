@@ -6,5 +6,30 @@
 # arguments when they are passed to function calls. You can also pass an expression to the print() function call instead of a
 # single value. This is because the value that is actually passed to the print() function is the evaluated value of that expression.
 
+print('Hello, ')
+
+# Printing Multiple Values
+print('same', 'message', 'as before')
+
 var = 'Elliot'
 print('Hello, ' + var)
+
+print('just',
+'a bit',
+'bigger')
+
+# Final string to print
+
+print('Here', end=' ')
+print('it is...', end=' ')
+print('some more code')
+
+# Triple Quoted strings
+
+print('''
+
+|  | |=== |    |    |===|
+|==| |==  |    |    |   |
+|  | |=== |=== |=== |===|
+
+''')
