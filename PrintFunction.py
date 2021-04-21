@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import random
 # There is another python instruction called a print() function call. It performs a task to print values to the screen.
 # There are many different functions that come with Python. To call a function means to execute the code that is inside
 # the function parenthesis().
@@ -23,6 +24,10 @@ print('just',
 print('Here', end=' ')
 print('it is...', end=' ')
 print('some more code')
+
+for i in range(5):
+    print(random.randint(1, 100,),end='') # See what i did to get the value in a straight line. Rather than down the screen.
+print('')
 
 # Triple Quoted strings
 
