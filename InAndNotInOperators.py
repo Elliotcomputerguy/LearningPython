@@ -14,4 +14,9 @@ if 'Hello' not in var:
     print('True')
 else:
     print('False')
-    
+
+# This while loop will not exit until username is evaluated to True. Ie a value has been entered and assigned to the username variable.
+print('--------------------------------')
+username = ''
+while not username:
+    username = input('Enter your username:')
