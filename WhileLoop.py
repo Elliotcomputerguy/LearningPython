@@ -29,13 +29,48 @@ timestable = input('Enter your times table of choice:')
 timestable = int(timestable)
 while i <=10:
     print(timestable, 'x', i, '=', i * timestable )
-    i = i + 1
+    i += 1
 
-# A for loop would work much better here as it is designed to iterate through strings and lists.
+# A for loop statement would work much better here as it is designed to iterate through strings and lists.
 print('--------------------------------------')
 i = 0
 var = input('Enter a string value ie your name:')
 while i < len(var):
     letter = var[i]
     print ('The letter is', letter)
-    i = i + 1
+    i += 1
+
+# Infinite loops
+
+counter = 0
+while counter <= 10:
+    print(counter)
+    # without the below expression evaluating a value to increase the integer value of varible counter from 0 to 10 on each iteration 
+    # it would be an infinite loop and would only print 0 indefinitily as there is no escape condition. 
+    counter += 1
+
+# Intentional Infinite Loops with exit conditions
+# The break statement will exit a loop and the continue statement will go back to the beginning of the while loop while the 
+# condition is elevated to True. 
+# Break and continue statements should be used sparingly. Using these statements make it harder to understand the flow of a loop.
+# As best practice it is good to not use these statements. Any loop can be wrote with out them.  
+
+
+count = 0
+while True:
+    count += 1
+    if count > 10:
+        break
+    if count == 5:
+        continue
+    print(count)
+
+# This while loop will not exit until username is evaluated to True. Ie a value has been entered and assigned to the username variable.
+print('--------------------------------')
+username = ''
+while not username:
+    username = input('Enter your username:')
+
+password = ''
+while not password:
+    password = input('Enter your password:')
