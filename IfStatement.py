@@ -10,3 +10,11 @@ if passwd != 'My$3cr3tpass':
     print('Access denied')
 print('Done')
 
+# Interpreting any value as True or False 
+# Below your see no comparison operator but the value itself is being treated as the condition. I caled it condition. 
+
+condition = input('\nEnter a value to mark condition as True or hit enter to skip to mark as False:')
+if condition:
+    print('the interpreter reads the above as if money != 0: #%s' % ('True'))
+else: 
+    print('False')
