@@ -55,7 +55,6 @@ while counter <= 10:
 # Break and continue statements should be used sparingly. Using these statements make it harder to understand the flow of a loop.
 # As best practice it is good to not use these statements. Any loop can be wrote with out them.  
 
-
 count = 0
 while True:
     count += 1
@@ -64,6 +63,16 @@ while True:
     if count == 5:
         continue
     print(count)
+
+# Sentry variables
+# Often, while loops are controlled by a sentry variable, a variable used in the condition and compared to some other value
+# or values. You will need to initilize the sentry variable. 
+
+# The below will never run as the variable response is equal to because. 
+response = 'because'
+while response != 'because':
+    response = input('why')
+
 
 # This while loop will not exit until username is evaluated to True. Ie a value has been entered and assigned to the username variable.
 print('--------------------------------')

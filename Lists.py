@@ -76,7 +76,7 @@ func3()
 # You can also use the len() function to tell how many values are in the list
 
 sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
-print(len(sneakers)) 
+print('Length of list', len(sneakers)) 
 
 # You can also use the in or not in operator 
 
