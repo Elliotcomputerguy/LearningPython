@@ -11,12 +11,13 @@ for i in range(6):
     print(i)
 
 # You can also pass two integer arguments to the range() function. The first argument is where it should start from with the second
-# argun=ment being where it should finish. 
+# argunment being where it should finish. The end argument will not be included. Will only return 7 at the end in this return
 print('---------------------------')
 for i in range(3, 8):
     print(i)
 
 # Another example below where we are passing an argument into the len() function and using the return value as an argument into the range() function.
+# as you cannot pass string data types into the range function. 
 
 print('-----------------------------')
 LETTERS = 'ABCDEFGHIJKLMOPQRSTUVWXYZ'
@@ -34,3 +35,16 @@ print(myList)
 # How ever it is easier to use the list() function and call the range() function. 
 myList = list(range(10))
 print(myList)
+
+# when you give the range function 3 arguments. It will treat them as a start point, an end point and the nuber by which to count.
+# The start point is always the first value, the end point is never included. 
+print('\n\nCounting in fives:')
+for i in range(0, 50, 5):
+    print(i, end=' ')
+
+# the last argument in the range() function call is -1. This tells the function to go from start point to end point by -1 each time.
+# This is the same as saying subtract 1 on each itteration. The loop counts down from 10 to1 and does not include 0. 
+
+print('\n\nCounting backwards:')
+for i in range(20, 0, -1):
+    print(i, end=' ')
