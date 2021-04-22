@@ -54,3 +54,31 @@ var = 'string'
 var = var[:4] + 'x' + var[5:]
 
 # Slicing is a simple way to get a substring from a larger string.
+
+# 0    1    2    3    4   5
+# [ p ][ i ][ z ][ z ][ a ]
+# -5  -4    -3   -2   -1   
+# 
+print('--------------------------')
+
+word = 'pizza'
+print('''
+
+ Slicing cheat sheet
+
+0   1   2   3   4   5
++---+---+---+---+---+
+| p | i | z | z | a |
++---+---+---+---+---+
+-5 -4  -3  -2  -1
+
+''')
+start = None
+while start != '':
+    start = input('\nstart:')
+    if start:
+        start = int(start)
+        finish = int(input('Finish:'))
+        print('word [ %s : %s ]' % (start, finish), end=' ')
+        print(word[start:finish])
+print('finish')    

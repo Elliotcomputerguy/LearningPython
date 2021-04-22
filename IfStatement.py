@@ -12,6 +12,7 @@ print('Done')
 
 # Interpreting any value as True or False 
 # Below your see no comparison operator but the value itself is being treated as the condition. I caled it condition. 
+# When it comes to evaluating a number as a condition. 0 is Null and everything else is True.
 
 condition = input('\nEnter a value to mark condition as True or hit enter to skip to mark as False:')
 if condition:

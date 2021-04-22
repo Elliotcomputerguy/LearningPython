@@ -37,27 +37,3 @@ for i in range(10):
     # a value of 5. But it will never go to 5 as it starts from 0 which is 5 0-4. You can use randint() and add a -1 
     # on the assignment statement. This way the variable high will be changed to 4 and you wont be out of range 
     print('word [ %s ] \t %s' % (position, word[position]))
-
-
-# String Imutability
-# Sequences fall into one or two categories. nutable or immutable. A sequence that is mutable is one that can change. 
-# A sequence that is immutable means unchangable so it is one that cannot change.
-# 
-# So there is a number of ways to crack this egg. We can either use a for loop to create a new string OR 
-# you can use slicing. 
-
-message = input('Enter your message:')
-new_message = ''
-CHARACTERSTOREMOVE = 'aeiou'
-
-for character in message:
-    if character.lower() not in CHARACTERSTOREMOVE:
-        new_message += character
-        print('A new string has been created: %s' % (new_message))
-print('Your message with the characters removed: \n %s' % (new_message))
-
-# Or you can use slicing to change the characters. I want to change the character t with an X.
-
-var = 'elliotcomputerguy'
-var = var[:5] + 'X' + var[6:]
-print(var)
