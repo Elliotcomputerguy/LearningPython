@@ -21,11 +21,13 @@ print('')
 # function but accesses it via the random module. This access is known as dot notation. The randint() function requires to integer arguments
 # and returns a random integer between those two values. 
 
-var = random.randint(1, 10)
+var = random.randint(0, 5)
 print(var)
+
 # randrange() function
 # The randrange() function. There are multiple ways to call randrange() but the easiest method is to use a single, positive, integer
-# argument. The return value will be anything from 0 - 9 using the below example. If i + 1 it will be 0 - 10.
+# argument. The return value will be anything from 0 - 9 using the below example. randrange will only produce 
+# a reutn of 0 - 9 not the 10 as the function is picking a number of 10 numbers that starts with a 0... If i + 1 it will be 0 - 10.
 var = random.randrange(10) + 1
 print(var)
 
