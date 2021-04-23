@@ -82,3 +82,11 @@ while start != '':
         print('word [ %s : %s ]' % (start, finish), end=' ')
         print(word[start:finish])
 print('finish')    
+
+# remove a character from the string assigned to word using slicing
+word = 'mcdonalds'
+print('Original variable word:', word)
+word = word[:4] + '' + word[5:]
+print('New word:', word)
+word = word[:4] + word[(4 + 1):] 
+print(word)
