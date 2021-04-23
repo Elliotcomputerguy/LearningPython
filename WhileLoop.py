@@ -29,8 +29,9 @@
 #   if it is False it will not run the loop and skip the block
 
 i = 1
-timestable = input('Enter your times table of choice:')
-timestable = int(timestable)
+timestable = int(input('Enter your times table of choice:')) #<-- Only accept int input
+
+# timestable = int(timestable) <-- To convert to int from str
 while i <=10:
     print(timestable, 'x', i, '=', i * timestable )
     i += 1
@@ -72,19 +73,18 @@ while True:
 # Often, while loops are controlled by a sentry variable, a variable used in the condition and compared to some other value
 # or values. You will need to initilize the sentry variable. 
 
-# The below will never run as the variable response is equal to because.
-
-response = 'because'
-while response != 'because':
-    response = input('why')
-
-# This is the desired logic rather than the above.
 response = ''
 while response != 'batman':
     response = input('Guess what my name is:')
 print('nananananana batman!')
 
+# Checking the sentry variable is possible for the while loop to evaluate to True, otherwise the while statement will not run. 
 
+# The below will never run as the variable response is equal to because.
+
+response = 'because'
+while response != 'because':
+    response = input('why')
 
 # This while loop will not exit until username is evaluated to True. Ie a value has been entered and assigned to the username variable.
 print('--------------------------------')
@@ -96,3 +96,11 @@ password = ''
 while not password:
     password = input('Enter your password:')
 
+# This while loop will not exit until start == ''
+start = None
+while start != '':
+    start = input('\nstart:')
+    if start:
+        print('some code')
+    else:
+        print('fin')
