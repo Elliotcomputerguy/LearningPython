@@ -24,6 +24,10 @@
 
 # My times table program. I convert input() into integer to allow the end user to choose what times table to do.
 
+# while (condition) --> True
+#   it will Loop and run the block. 
+#   if it is False it will not run the loop and skip the block
+
 i = 1
 timestable = input('Enter your times table of choice:')
 timestable = int(timestable)
@@ -68,10 +72,18 @@ while True:
 # Often, while loops are controlled by a sentry variable, a variable used in the condition and compared to some other value
 # or values. You will need to initilize the sentry variable. 
 
-# The below will never run as the variable response is equal to because. 
+# The below will never run as the variable response is equal to because.
+
 response = 'because'
 while response != 'because':
     response = input('why')
+
+# This is the desired logic rather than the above.
+response = ''
+while response != 'batman':
+    response = input('Guess what my name is:')
+print('nananananana batman!')
+
 
 
 # This while loop will not exit until username is evaluated to True. Ie a value has been entered and assigned to the username variable.
@@ -83,3 +95,4 @@ while not username:
 password = ''
 while not password:
     password = input('Enter your password:')
+

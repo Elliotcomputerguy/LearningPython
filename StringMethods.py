@@ -38,7 +38,7 @@ print(find)
 myList = ['item1', 'item2', 'item3']
 print('-'.join(myList).title())
 
-# The .replace() method. Replces the word five with millions of from the string 'five text'
+# The .replace() method. Replces the word 'five' with 'millions of' from the string 'five text' assigned to variable quote.
 
 quote = 'five text'
 print(quote.replace('five', 'millions of'))
@@ -46,6 +46,9 @@ print(quote)
 
 #capatalize()
 
-#strip()
+# The .strip() method will remove white space. 
+answer = input('Enter a string:').strip()
+print(answer)
+
 
 #replace(old, new [, max])

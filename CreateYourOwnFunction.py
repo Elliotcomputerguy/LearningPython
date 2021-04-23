@@ -36,3 +36,13 @@ print(var)
 
 # The function call addNumbers(5, 10) will evaluate to 15. The return statement in addNumbers() will evaluate the expression a + b and 
 # then return the evaluated value. That is why addNumbers(5, 10) evaluates to 15. Which is the value stored in var.
+
+def answer(yes_or_no):
+    while True:
+        answer = input('yes or no:').strip().lower()
+        if answer in ('yes', 'no'):
+            return answer
+
+print(answer('Yes or No'))
+
+     

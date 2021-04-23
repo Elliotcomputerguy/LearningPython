@@ -2,7 +2,7 @@
 
 
 # String Imutability
-# Sequences fall into one or two categories. nutable or immutable. A sequence that is mutable is one that can change. 
+# Sequences fall into one or two categories. mutable or immutable. A sequence that is mutable is one that can change. 
 # A sequence that is immutable means unchangable so it is one that cannot change.
 # 
 # So there is a number of ways to crack this egg. We can either use a for loop to create a new string OR 

@@ -9,6 +9,16 @@
 sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
 print(sneakers)
 
+
+# Adding to a list
+myList = ['Value1']
+myList += ['Value2']
+
+# or use the append method
+
+myList.append('value3')
+print(myList)
+print('-------------------------------')
 # You can index and slice lists as you would strings. Remeber indexes start from 0
 
 print(sneakers[0])
@@ -19,12 +29,12 @@ print(sneakers[:2])
 for sneaks in sneakers:
     print('My favourite sneakers are', sneaks)
 
-# Using the list() function to convert range objectsto lists
+# Using the list() function to convert range objects to lists
 # if you need a list value that has increasing integer amounts, you could have code like the below to build a list. 
 
 myList = []
 for i in range(10):
-    myList = myList + [i]
+    myList += [i]
 print(myList)
 
 # How ever it is easier to directly make a list from a range argument that range() function returns by using list() function. 
@@ -97,3 +107,12 @@ var = var + var2
 var = var * 5
 print(var)
 
+
+# append a number onto the end of you variable in list
+myList = []
+for g in range(5):
+	myList += ['var' + str(g)]
+
+# Over write the values in your list
+for i in range(len(myList)):
+    myList[i] = ('item' + str(i))
