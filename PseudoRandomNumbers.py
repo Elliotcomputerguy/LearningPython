@@ -13,12 +13,11 @@ import random
 
 # random.seed(42) 
 for i in range(5):
-    print(random.randint(1, 100,),end='') # See what i did to get the value in a straight line. Rather than down the screen.
-print('')
+    print(random.randint(1, 100,),end='' + '\n')
 
 # Random.randint() function
 # The random module contains a function called randint(), which produces a random integer. The program does not directly call the randint()
-# function but accesses it via the random module. This access is known as dot notation. The randint() function requires to integer arguments
+# function but accesses it via the random module. This access is known as dot notation. The randint() function requires two integer arguments
 # and returns a random integer between those two values. 
 
 var = random.randint(0, 5)
@@ -31,3 +30,18 @@ print(var)
 var = random.randrange(10) + 1
 print(var)
 
+print('=========================================')
+# random.choice() function
+# 
+WORDS = ('cat','dog','cow','mouse')
+word1 = random.choice(WORDS)
+print(word1)
+print('=========================================')
+# Or you can use the below. 
+word = random.randrange(len(WORDS))
+print(WORDS[word])
+
+# You could use this one as well. 
+lenOfWords = len(WORDS)
+word2 = random.randint(0, lenOfWords)
+print(WORDS[lenOfWords])
