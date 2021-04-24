@@ -72,7 +72,7 @@ print('Another way by unsing the format method: {}.'.format(variableOne)) # <-- 
 print(' Last but not least another way but using concatenation: ' + variableOne) # <-- This is not using formatting but concatenation 
 
 # ===============================================================
-# Converting an integer into a string using str()
+# Converting an integer into a string using str() function
 # You can convet an integer value into a string value by using str(). 
 # ===============================================================
 # Example:
@@ -118,6 +118,7 @@ for i in range(0, 50, 5):
 import random
 for i in range(5):
     print(random.randint(1, 100,),end=' ')
+print('')
 
 print('The show must', end=' ') 
 print('go on...')
