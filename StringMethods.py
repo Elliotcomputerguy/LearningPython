@@ -85,8 +85,14 @@ print(var)
 # ===============================================================
 # Example
 
-print(' Enter a string with whitespace ').strip()
-print(' Enter a string with whitespace ').lstrip()
-print(' Enter a string with whitespace ').rstrip()
+var = '     remove all witespaces       '
+var = var.strip() 
+print(var)
+var = '     remove left white spaces    '
+var = var.lstrip()
+print(var)
+var = '    remove right whitespace      '
+var = var.rstrip()
+print(var)
 
 # ===============================================================
