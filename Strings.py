@@ -118,6 +118,7 @@ for i in range(0, 50, 5):
 import random
 for i in range(5):
     print(random.randint(1, 100,),end=' ')
+print('')
 
 print('The show must', end=' ') 
 print('go on...')
