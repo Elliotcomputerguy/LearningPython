@@ -96,3 +96,5 @@ var = var.rstrip()
 print(var)
 
 # ===============================================================
+# For full list of string methods you can go to https://www.w3schools.com/python/python_ref_string.asp
+# ===============================================================
