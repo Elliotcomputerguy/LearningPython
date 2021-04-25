@@ -1,118 +1,188 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # #The List data type
 
-# A list value can contain other values. Just like a string begin and end with quotes. 
-# A list value begins with a [ open bracket and ends with a closing bracket ]. The value stored inside the list are typed within the brackets.
-# If ther is more than one value in the list, the values are seperated by commas. 
+# A list can contain a multitude of differnt elements. Strings, integers, tuples. Pretty much anything goes into a list. 
+# Just like a string begins and ends with quotes. A list begins with a [ open bracket and ends with a closing bracket ]. 
+# The elements stored inside a list are typed within the brackets. If there are more than one element in a list, 
+# the elements are seperated by commas. 
+# ===============================================================
+# Example:
 
 sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
 print(sneakers)
 
-
-# Adding to a list
-myList = ['Value1']
-myList += ['Value2']
-
-# or use the append method
-
-myList.append('value3')
-print(myList)
-print('-------------------------------')
-# You can index and slice lists as you would strings. Remeber indexes start from 0
-
-print(sneakers[0])
-print(sneakers[:2])
-
-# you can interate through a list with a for loop statement
-
-for sneaks in sneakers:
-    print('My favourite sneakers are', sneaks)
-
-# Using the list() function to convert range objects to lists
-# if you need a list value that has increasing integer amounts, you could have code like the below to build a list. 
-
-myList = []
-for i in range(10):
-    myList += [i]
-print(myList)
-
-# How ever it is easier to directly make a list from a range argument that range() function returns by using list() function. 
-print('------------------------------')
-myList = list(range(10))
-print(myList)
-
-print('------------------------------')
-def main():
-    myList = list(range(10))
-    print(myList[0])
-    print(myList[1])
-    print(myList)
-
-main()
-
-# The list() can also convert strings into list value's. 
-def func():
-    myList = list('Elliot')
-    print(myList[0])
-    print(myList)
-
-func()
-
-# #Reassigning the items in Lists. The items inside a list can be modified. You use the index to with a an assignemnt statement.
-print('--------------------------------')
-sneakers = ['jordan', 'nike', 'yeezy', 'addidas']
-sneakers[3] = 'Reebok'
-print(sneakers)
-
-print('---------------------------------')
-def func2():
-    sneakers = 'jordan' + 'nike' + 'yeezy' + 'addidas'
-    myList = list(sneakers)
-    print(myList)
-func2()
-
-# #lists of lists
-# list values can also contain other list values. 
-print('----------------------------------------')
-def func3():
-    listInList = [['dog', 'cat'], [1, 2, 3]]
-    print(listInList[0]) #= value dog,cat
-    print(listInList[0] [0]) # = value dog
-    print(listInList[1]) # = value 1,2,3
-    print(listInList[1][2]) # = value 3
-func3()
-
-# You can also use the len() function to tell how many values are in the list
+# ===============================================================
+# Lists are ordered collections. You access the list by using a index. 
+# ===============================================================
+# Example:
 
 sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
-print('Length of list', len(sneakers)) 
+print(sneakers[0]) # = Jordan
+print(sneakers[3]) # = Adidas
+# ===============================================================
+# Just like in strings when we want to use a variable value in our string we can do the same for lists using string interpolation. 
+# ===============================================================
+# Example:
 
-# You can also use the in or not in operator 
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+print(f'I just got the latest Off White {sneakers[0]} 4\'s from the {sneakers[1]} drop on the sneakers app')
+
+# ===============================================================
+# Unlike tuples, lists are mutable. changing elements can be achieved with indexing, slicing or methods.
+# ===============================================================
+# Example:
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+sneakers[0] = 'zanoti' # You cannot assign a new element this way. If you was to specify sneakers[4] it would produce an error.
+print(sneakers) # = ['zanoti', 'Nike', 'Yeezy', 'Adidas']
+sneakers[0:1] = ['Christian Louboutin'] 
+print(sneakers) # = ['Christian Louboutin', 'Nike', 'Yeezy', 'Adidas']
+sneakers = sneakers[:0] + ['zanoti'] + sneakers[1:]
+print(sneakers) # = ['zanoti', 'Nike', 'Yeezy', 'Adidas']
+
+# ===============================================================
+# to add to a list you can use the addition operator or use the append() method. 
+# or use a for loop. Methods are coverd in List Methods. 
+# ===============================================================
+# Example:
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+sneakers += ['zanoti']
+print(sneakers) # = 'Jordan', 'Nike', 'Yeezy', 'Adidas' 'zanoti'
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+for i in range(len(sneakers)):
+    sneakers[i] = ('item' + str(i))
+    print(sneakers)
+
+# ===============================================================
+# We can get the length of a list by using the len() function. 
+# ===============================================================
+# Example:
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+print(len(sneakers)) # = 4 (Remember Len() starts from 1. Indexing starts from 0.)
+
+# ===============================================================
+# You can index and slice lists as you would strings. Remember indexes start from 0
+# ===============================================================
+# Example:
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+print(f'At index 1 in list sneakers is {sneakers[1]}') # = nike
+print(f'using blank slicing with slice postion [2:] = {sneakers[2:]}') # = 'Yeezy', 'Adidas'
+print(f'using blank slicing with slice postion [:2] = {sneakers[:2]}') # = 'Jordan', 'Nike' 
+print(f'using negative indexing with index positon [-1] = {sneakers[-1]}') # = Adidas
+
+# ===============================================================
+# Using for loops to iterate over a list and looping through a slice.
+# ===============================================================
+# Example:
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+counter = 1
+for element in sneakers:
+    print(f'My favourite sneakers are [{counter}]: {element}'.capitalize())
+    counter += 1
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+counter = 1
+for element in sneakers[:3]:
+    print(f'My favourite sneakers are [{counter}]: {element}'.capitalize())
+    counter += 1
+
+# ===============================================================
+# concatenating lists and replication. In reality you would just do newListName += sneakers. But created a for loop example. 
+# Remember the Zen of Python. Simplicity is key.
+# ===============================================================
+# Example:
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+newListName = ['Zanoti']
+for element in range(len(sneakers)):
+    newListName += [sneakers[element]]
+print(newListName)
+
+newListName *= 5
+print(newListName)
+
+# ===============================================================
+# To delete an element in a list you can use the del keyword. Methods are also available but covered in list methods.
+# ===============================================================
+# Example:
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+del sneakers[3]
+print(sneakers) # = ['Jordan', 'Nike', 'Yeezy']
+del sneakers[0:1]
+print(sneakers) # = ['Nike', 'Yeezy']
+
+# ===============================================================
+# Lists can contain other lists or tuples. This is known as nested sequences.
+# ===============================================================
+# Example:
+
+sneakers = [['Jordan', 'Nike'], ['Yeezy', 'Adidas']]
+#                    0                  1 
+print(sneakers[0]) #= ['Jordan', 'Nike']
+print(sneakers[0][0]) # = 'Jordan'
+print(sneakers[1]) # = ['Yeezy', 'Adidas']
+print(sneakers[1][1]) # = 'Adidas'
+
+sneakers = ['listitem0',[['Jordan', 'Nike'], ['Yeezy', 'Adidas']]]
+#          0            1         0          1       1                                 
+print(sneakers[0]) # = 'listitem0'
+print(sneakers[1]) # = ['Jordan', 'Nike'], ['Yeezy', 'Adidas']
+print(sneakers[1][0]) # = ['Jordan', 'Nike']
+print(sneakers[1][0][0]) # = 'Jordan'
+print(sneakers[1][1]) # = ['Yeezy', 'Adidas']
+print(sneakers[1][1][0]) # = 'Yeezy'
+
+sneakers = ['listitem0',['value1', 'value2'], [['Jordan', 'Nike'], ['Yeezy', 'Adidas']]]
+#          0            1                     2         0          2        1            
+           
+print(sneakers[0]) # = 'listitem0'
+print(sneakers[1]) # = ['value1', 'value2']
+print(sneakers[2][0]) # = ['Jordan', 'Nike']
+print(sneakers[2][1]) # = ['Yeezy', 'Adidas']
+
+listWithStringsIntegersTuplesLists = ['string', 2, ('tupleItem1', 'tupleItem2'), ['listItem1','listItem2']]
+#                                        0      1               2                            3         
+print(listWithStringsIntegersTuplesLists[0]) #= 'string'
+print(listWithStringsIntegersTuplesLists[0][0]) # = 's'
+print(listWithStringsIntegersTuplesLists[1]) # = 2
+print(listWithStringsIntegersTuplesLists[2]) # = ('tupleItem1', 'tupleItem2')
+print(listWithStringsIntegersTuplesLists[2][1]) # = ('tupleItem2')
+print(listWithStringsIntegersTuplesLists[3]) # = ['listItem1','listItem2']
+print(listWithStringsIntegersTuplesLists[3][1]) # = 'listItem2'
+
+# ===============================================================
+# in and not in operators are expressions of two strings connected by the in or not in operator that will evaluate to True 
+# if the first string is inside the second string or in the case of the not in operator not in the second string. 
+# Else the expression evaluates to False.
+# ===============================================================
+# Example:
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
 
 for i in sneakers:
-    print(i.title()) # .title is another method i learned (:
+    print(i.title()) 
 
 if 'rebok' not in sneakers:
     print('True')
 else:
     print('False')
 
-# List Concatenation and Replication with the + an * Operator
-# Just like how + and * operators can concatenate and replicate strings, the same operators can concatenate and replicate lists. 
+# ===============================================================
+# populating lists with integers using the range() function and the list() function.
+# ===============================================================
+# Example:
 
-var = ['hello'.title()]
-var2 = ['world'.title()]
-var = var + var2
-var = var * 5
-print(var)
+myNumberList = []
+for i in range(10):
+    myNumberList += [i]
 
+myNumberList = list(range(10))
 
-# append a number onto the end of you variable in list
-myList = []
-for g in range(5):
-	myList += ['var' + str(g)]
-
-# Over write the values in your list
-for i in range(len(myList)):
-    myList[i] = ('item' + str(i))
+# ===============================================================
