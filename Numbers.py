@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # #Numbers
-# With any programming language you are going to use numbers for a multitude of reasons. You simply cant avoid them. 
+# With any programming language you are going to use numbers for a multitude of reasons. You simply cant avoid them. I have tried.
 # When you instruct python to perform a calculation this is known as an expression. Expressions are made up of values connected
 # by operators. When Python calculates the expression you would say Pyhton has evaluated the expression. 
 # Unlike statements An expression will always evlaute to a single value. This is key to remember.
@@ -24,6 +24,7 @@ print(var)
 #                  ||
 #              Expression
 # ===============================================================
+# Mathematical Operators
 # =========================================
 # Operator         Operation    Expressions
 # =========================================
