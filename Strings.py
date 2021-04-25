@@ -115,16 +115,9 @@ print(var)
 # ===============================================================
 # Example:
 
-for i in range(0, 50, 5):
-    print(i, end=' ') # <-- The end='' print argument evaluates characters going across your screen rather than down it.                 
-
-import random
-for i in range(5):
-    print(random.randint(1, 100,),end=' ')
-print('')
-
 print('The show must', end=' ') 
 print('go on...')
+
 # ===============================================================
 # Using triple quoted strings. Below i use ASCII from a online generator. You would use a tripple quote string for long text or a 
 # a game title like i have done. 
@@ -143,4 +136,23 @@ print('''
  ''')
 
 # ===============================================================
+# You can loop through strings printing out each character. Use the end='' print argument to evaluate across the screen
+# rather than down it.
+# ===============================================================
+# Example:
+
+var = 'A sentence is a set of words that is complete in itself'
+for letter in var:
+    print(letter, end='')
+
+# ===============================================================
+# To get the length of a string you can use the len() function.
+# ===============================================================
+# Example:
+
+print(len('A sentence is a set of words that is complete in itself'))
+
+# ===============================================================
+
+
 
