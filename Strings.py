@@ -10,7 +10,9 @@
 # ===============================================================
 # Example:
 
-print('this is a string' + ' ' + "this is a string")
+var = "Hello "
+var + 'World'
+print(var)
 
 # ===============================================================
 # String concatenation can be achieved with the + operator. You can add together two string values
@@ -19,7 +21,8 @@ print('this is a string' + ' ' + "this is a string")
 # ===============================================================
 # Example:
 
-print('this is a string', "this is a string")
+print('this is a string' + ' ' + 'this is a string')
+print('this is a string', 'this is a string')
 
 # ===============================================================
 # You can achieve string replication with the * operator.
