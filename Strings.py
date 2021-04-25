@@ -70,7 +70,7 @@ print('One way of displaying a varaible [ %s ] in a string:' % (variableOne)) # 
 
 print (f'This is another way: [ {variableOne} ]') # <--  f-string formatting
 
-print('Another way by unsing the format method: {}.'.format(variableOne)) # <-- .format( ) method
+print('Another way by using the format method: {}.'.format(variableOne)) # <-- .format( ) method
 
 print(' Last but not least another way but using concatenation: ' + variableOne) # <-- This is not using formatting but concatenation 
 
