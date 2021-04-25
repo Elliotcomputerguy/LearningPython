@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # For loop statement 
 # The for loop statement is very good at looping over a string or list of values. This is different to the while statement. which loops
@@ -22,13 +22,15 @@ for letter in 'Elliot':
     print('The letter is :', letter)
 
 # Multiplication table (from 1 to 10)
-num = input('Enter a numner to multiply from 1 to 10:')
+num = input('Enter a number to multiply from 1 to 10:')
 # convert string into integer
 num = int(num)
+
 # To take input from the user
 # num = int(input("Display multiplication table of? "))
 
-# Iterate 10 times from i = 1 to 10
+# Iterate 10 times from i = 1 to 10. Your notice a 11 instead of a 10. This is due to the range() function. It will not go up to it last
+# range value.  
 for i in range(1, 11):
    print(num, 'x', i, '=', num*i)
 

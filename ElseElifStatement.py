@@ -1,7 +1,10 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # An else statement can be used after an if statement's block, and its block of code will be executed if the if statement's condition is False.
 # You can read the code as "if this condition is True, execute this block, or else execute this block"
+
+# ===============================================================
+# Example:
 
 passwd = input('Enter your password:')
 if passwd == 'password':
@@ -10,10 +13,15 @@ else:
     print('Access denied')
 print('Done')
 
+# ===============================================================
+
 # #elif statement
 # the elif statement like a if statement has a condition, like an else statement it follows an if (or another elif) statement and executes
 # if the previous if (or elif) statement's condition is False. You can read a if,elif and else statement as "if this condition is true, run this block \n
-# Or else, check if this next condition is True. Or else, run this last block." 
+# Or elif, check if this next condition is True. Or else, run this last block." 
+
+# ===============================================================
+# Example:
 
 numberOfCars = input('How many cars do you own:')
 numberOfCars = int(numberOfCars)
