@@ -8,6 +8,9 @@
 # In fact, there are not many values that evaluate to False, except empty values, such as (), [], {}, "", the number 0, and the value None. 
 # And of course the value False evaluates to False.
 
+# ===============================================================
+# Example:
+
 x = None
 if x:
   print("\n\nDo you think None is True?")
@@ -16,9 +19,18 @@ elif x is False:
 else:
   print("\n\nNone is not True, or False, None is just None...")
 
-# The inside print function returns a None.
+# ===============================================================
+
+# ===============================================================
+# Example:
+
+# Testing for None. The inside print function returns a None.
 print(print('hi'))
 
+# ===============================================================
+# Example:
+
+# Testing for None. The function will return a None
 def func():
     pass
 print(func())
