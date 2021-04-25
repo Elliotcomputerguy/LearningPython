@@ -3,7 +3,6 @@
 # The range() function
 # The range function takes one integer argument and returns a value of the range data type. These range values can be used in for loops to
 # loop a specific number of times. 
-
 # ===============================================================
 # Example:
 
@@ -15,11 +14,10 @@ for i in range(5):
 
 for i in range(6):
     print(i)
-# ===============================================================
 
+# ===============================================================
 # You can also pass two integer arguments to the range() function. The first argument is where it should start from with the second
 # argunment being where it should finish. The end argument will not be included. Will only return 7 at the end in this return
-
 # ===============================================================
 # Example:
 
@@ -27,10 +25,8 @@ for i in range(3, 8):
     print(i)
 
 # ===============================================================
-
 # Another example below where we are passing an argument into the len() function and using the return value as an argument into the range() function.
 # as you cannot pass string data types into the range function. 
-
 # ===============================================================
 # Example:
 
@@ -57,10 +53,8 @@ myList = list(range(10))
 print(myList)
 
 # ===============================================================
-
 # when you give the range function 3 arguments. It will treat them as a start point, an end point and the nuber by which to count.
 # The start point is always the first value, the end point is never included. 
-
 # ===============================================================
 # Example:
 
