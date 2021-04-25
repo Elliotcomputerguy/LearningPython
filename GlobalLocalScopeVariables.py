@@ -1,4 +1,4 @@
-#!/bin/usr/python
+#!/bin/usr/env python
 
 # #Variables in the global and local scope
 # Every time a function is called, a local scope is created. Variables created during a function call exist in the local scope.
@@ -17,6 +17,9 @@
 # 2) If a variable in a function is never used in an assigment statement, it is a global variable.
 # 3) If a variable in a function is not used in a global statement; but is used in an assigment statement, it is a local variable
 # 4) If a variable in a function is used in a global statement, it is a global variable when used in that function.
+
+# ===============================================================
+# Example:
 
 var = 42 # global variable
 

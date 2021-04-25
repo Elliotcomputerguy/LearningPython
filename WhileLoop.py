@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 # #While statement
 # A while statement tells python to check what the condition evalutes to. If the condition evaluates to True, the program execution enters 
@@ -28,16 +28,23 @@
 #   it will Loop and run the block. 
 #   if it is False it will not run the loop and skip the block
 
+# ===============================================================
+# Example:
+
 i = 1
 timestable = int(input('Enter your times table of choice:')) #<-- Only accept int input
 
-# timestable = int(timestable) <-- To convert to int from str
 while i <=10:
     print(timestable, 'x', i, '=', i * timestable )
     i += 1
 
+# ===============================================================
+
 # A for loop statement would work much better here as it is designed to iterate through strings and lists.
-print('--------------------------------------')
+
+# ===============================================================
+# Example:
+
 i = 0
 var = input('Enter a string value ie your name:')
 while i < len(var):
@@ -45,20 +52,31 @@ while i < len(var):
     print ('The letter is', letter)
     i += 1
 
+# ===============================================================
+
 # Infinite loops
+
+# ===============================================================
+# Example:
 
 counter = 0
 while counter <= 10:
     print(counter)
-    # without the below expression evaluating a value to increase the integer value of varible counter from 0 to 10 on each iteration 
+    # without the below expression 'counter += 1' evaluating a value to increase the integer value of varible counter from 0 to 10 on each iteration 
     # it would be an infinite loop and would only print 0 indefinitily as there is no escape condition. 
     counter += 1
 
-# Intentional Infinite Loops with exit conditions
+# ===============================================================
+
+# #Intentional Infinite Loops with exit conditions
+
 # The break statement will exit a loop and the continue statement will go back to the beginning of the while loop while the 
 # condition is elevated to True. 
 # Break and continue statements should be used sparingly. Using these statements make it harder to understand the flow of a loop.
 # As best practice it is good to not use these statements. Any loop can be wrote with out them.  
+
+# ===============================================================
+# Example:
 
 count = 0
 while True:
@@ -69,24 +87,42 @@ while True:
         continue
     print(count)
 
+# ===============================================================
+
+
 # Sentry variables
+
 # Often, while loops are controlled by a sentry variable, a variable used in the condition and compared to some other value
 # or values. You will need to initilize the sentry variable. 
+
+# ===============================================================
+# Example:
 
 response = ''
 while response != 'batman':
     response = input('Guess what my name is:')
 print('nananananana batman!')
 
+# ===============================================================
+
 # Checking the sentry variable is possible for the while loop to evaluate to True, otherwise the while statement will not run. 
 
 # The below will never run as the variable response is equal to because.
+
+# ===============================================================
+# Example:
 
 response = 'because'
 while response != 'because':
     response = input('why')
 
+# ===============================================================
+
 # This while loop will not exit until username is evaluated to True. Ie a value has been entered and assigned to the username variable.
+
+# ===============================================================
+# Example:
+
 print('--------------------------------')
 username = ''
 while not username:
@@ -96,7 +132,13 @@ password = ''
 while not password:
     password = input('Enter your password:')
 
+# ===============================================================
+
 # This while loop will not exit until start == ''
+
+# ===============================================================
+# Example:
+
 start = None
 while start != '':
     start = input('\nstart:')
@@ -104,3 +146,27 @@ while start != '':
         print('some code')
     else:
         print('fin')
+
+# ===============================================================
+
+# This loop will not exit until the user enters nothing. Because word is True it enters the block. 
+# The while will not exit unti the condition is false.
+
+# ===============================================================
+# Example:
+  
+word = 'anything'
+while word:
+	word = input('>')
+
+# ===============================================================
+
+
+# This loop does the exact same thing.
+
+# ===============================================================
+# Example:
+ 
+word = None
+while word != '':
+	word = input('>')
