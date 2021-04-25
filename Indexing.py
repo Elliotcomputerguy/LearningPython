@@ -12,7 +12,6 @@ var = 'Elliot'[0]
 print(var)
 
 # ===============================================================
-
 # #Negative Indexes
 # Negative indexes start at the end of a string and go backwards. The negative index -1 is the index of the last character in a string. 
 # The index -2 is the index of the second from last character, and so on. 
