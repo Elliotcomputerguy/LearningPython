@@ -77,8 +77,8 @@ universe = 13_700_000_000
 print(universe) # = 13700000000
 
 # ===============================================================
-# You can use multiple assigment using a single line. This can be used When initalizing a set of numbers.
-# But can also be used with any value. 
+# You can use multiple assigments using a single line. This can be used When initalizing a set of numbers.
+# But can also be used with strings
 # ===============================================================
 # Example:
 
@@ -88,6 +88,7 @@ print(x, y, z)
 x, y, z = 'hello', 'world', 'again'
 print(x, y, z)
 
+# ===============================================================
 # #The math.ceil(), math.floor() and round() functions
 # When you divide number using the / operator, the expression returns a floating point number. This happens even if the number divides 
 # evenly. For example, 21 / 7 will evaluate to 3.0, not 3. 
