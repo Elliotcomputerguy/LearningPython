@@ -45,6 +45,16 @@ print(sneakers)
 print(popVariable)
 
 # ===============================================================
+# How to pop in a nested list.
+# ===============================================================
+# Example:
+
+sneakers = [['Nike', 'Yeezy', 'Jordan', 'Adidas', 'Zanotti'],[8, 7, 9, 6, 5]]
+popped = sneakers[0].pop(0)
+popped1 = sneakers[1].pop(0)
+print(popped)
+print(popped1)
+
 # if you only know the value of the list element you can use the remove() method. 
 # ===============================================================
 # Example:
