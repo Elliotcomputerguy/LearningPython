@@ -93,18 +93,28 @@ for element in sneakers[:3]:
     counter += 1
 
 # ===============================================================
-# concatenating lists and replication. In reality you would just do newListName += sneakers. But created a for loop example. 
-# Remember the Zen of Python. Simplicity is key.
+# concatenating lists and replication. 
 # ===============================================================
 # Example:
 
 sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
 newListName = ['Zanotti']
 for element in range(len(sneakers)):
-    newListName += [sneakers[element]]
+    newListName += [sneakers[element]] #<-- Concatenation
 print(newListName)
 
-newListName *= 5
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+newListName = ['Zanotti']
+newListName += sneakers #<-- Concatenation
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+newListName = []
+for element in range(len(sneakers)):  #<-- Replication
+    newListName += sneakers
+print(newListName)
+
+newListName = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+newListName *= 5  #<-- Replication
 print(newListName)
 
 # ===============================================================
@@ -196,5 +206,15 @@ sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
 
 sneakers = list(map(str.lower, sneakers))
 print(sneakers)
+
+# ===============================================================
+# List comprehensions allows you to generate a list in just one line of code. A list comprehension combines
+# the for loop and the creation of new elements. This is a more clean. 
+# ===============================================================
+# Example:
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+newListName = [sneakers[element] for element in range(len(sneakers))]
+print(newListName)
 
 # ===============================================================
