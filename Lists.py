@@ -186,3 +186,14 @@ for i in range(10):
 myNumberList = list(range(10))
 
 # ===============================================================
+# If your list is full of uppercase and lower case strings you can use
+# the list() function with the map() function to change them. 
+# ===============================================================
+# Example:
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+
+sneakers = list(map(str.lower, sneakers))
+print(sneakers)
+
+# ===============================================================
