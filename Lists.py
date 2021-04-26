@@ -217,4 +217,8 @@ sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
 newListName = [sneakers[element] for element in range(len(sneakers))]
 print(newListName)
 
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+newListName = [sneakers.lower() for sneakers in sneakers] #<-- This will convert the list to lowercase. This is using list comprehension
+print(newListName)                                        #    rather than the map() function. 
+
 # ===============================================================
