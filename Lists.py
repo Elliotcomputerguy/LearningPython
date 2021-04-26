@@ -34,11 +34,11 @@ print(f'I just got the latest Off White {sneakers[0]} 4\'s from the {sneakers[1]
 # Example:
 
 sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
-sneakers[0] = 'zanoti' # You cannot assign a new element this way. If you was to specify sneakers[4] it would produce an error.
+sneakers[0] = 'zanotti' # You cannot assign a new element this way. If you was to specify sneakers[4] it would produce an error.
 print(sneakers) # = ['zanoti', 'Nike', 'Yeezy', 'Adidas']
 sneakers[0:1] = ['Christian Louboutin'] 
 print(sneakers) # = ['Christian Louboutin', 'Nike', 'Yeezy', 'Adidas']
-sneakers = sneakers[:0] + ['zanoti'] + sneakers[1:]
+sneakers = sneakers[:0] + ['zanotti'] + sneakers[1:]
 print(sneakers) # = ['zanoti', 'Nike', 'Yeezy', 'Adidas']
 
 # ===============================================================
@@ -48,7 +48,7 @@ print(sneakers) # = ['zanoti', 'Nike', 'Yeezy', 'Adidas']
 # Example:
 
 sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
-sneakers += ['zanoti']
+sneakers += ['zanotti']
 print(sneakers) # = 'Jordan', 'Nike', 'Yeezy', 'Adidas' 'zanoti'
 
 sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
@@ -99,7 +99,7 @@ for element in sneakers[:3]:
 # Example:
 
 sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
-newListName = ['Zanoti']
+newListName = ['Zanotti']
 for element in range(len(sneakers)):
     newListName += [sneakers[element]]
 print(newListName)
@@ -184,5 +184,16 @@ for i in range(10):
     myNumberList += [i]
 
 myNumberList = list(range(10))
+
+# ===============================================================
+# If your list is full of uppercase and lower case strings you can use
+# the list() function with the map() function to change them. 
+# ===============================================================
+# Example:
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+
+sneakers = list(map(str.lower, sneakers))
+print(sneakers)
 
 # ===============================================================
