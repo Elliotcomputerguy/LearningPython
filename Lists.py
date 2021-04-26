@@ -119,9 +119,20 @@ del sneakers[0:1]
 print(sneakers) # = ['Nike', 'Yeezy']
 
 # ===============================================================
-# Lists can contain other lists or tuples. This is known as nested sequences.
+# Lists can contain other lists or tuples. This is known as nested sequences. Genreal rule of thumb you wont most
+# likely go deeper than two lists. It gets very confusing very fast when going deeper. Some examples below.
 # ===============================================================
 # Example:
+
+listWithStringsIntegersTuplesLists = ['string', 2, ('tupleItem1', 'tupleItem2'), ['listItem1','listItem2']]
+#                                    0   0      1               2                            3         
+print(listWithStringsIntegersTuplesLists[0]) #= 'string'
+print(listWithStringsIntegersTuplesLists[0][0]) # = 's'
+print(listWithStringsIntegersTuplesLists[1]) # = 2
+print(listWithStringsIntegersTuplesLists[2]) # = ('tupleItem1', 'tupleItem2')
+print(listWithStringsIntegersTuplesLists[2][1]) # = ('tupleItem2')
+print(listWithStringsIntegersTuplesLists[3]) # = ['listItem1','listItem2']
+print(listWithStringsIntegersTuplesLists[3][1]) # = 'listItem2'
 
 sneakers = [['Jordan', 'Nike'], ['Yeezy', 'Adidas']]
 #                    0                  1 
@@ -146,16 +157,6 @@ print(sneakers[0]) # = 'listitem0'
 print(sneakers[1]) # = ['value1', 'value2']
 print(sneakers[2][0]) # = ['Jordan', 'Nike']
 print(sneakers[2][1]) # = ['Yeezy', 'Adidas']
-
-listWithStringsIntegersTuplesLists = ['string', 2, ('tupleItem1', 'tupleItem2'), ['listItem1','listItem2']]
-#                                        0      1               2                            3         
-print(listWithStringsIntegersTuplesLists[0]) #= 'string'
-print(listWithStringsIntegersTuplesLists[0][0]) # = 's'
-print(listWithStringsIntegersTuplesLists[1]) # = 2
-print(listWithStringsIntegersTuplesLists[2]) # = ('tupleItem1', 'tupleItem2')
-print(listWithStringsIntegersTuplesLists[2][1]) # = ('tupleItem2')
-print(listWithStringsIntegersTuplesLists[3]) # = ['listItem1','listItem2']
-print(listWithStringsIntegersTuplesLists[3][1]) # = 'listItem2'
 
 # ===============================================================
 # in and not in operators are expressions of two strings connected by the in or not in operator that will evaluate to True 
