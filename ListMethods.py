@@ -89,12 +89,11 @@ print(sneakers)
 
 sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
 
-print(sorted(sneakers)) #<-- Only print out the list in alphabetical order
+print(sorted(sneakers)) #<-- Only print out the list in alphabetical order. If used with numbers will put them in numerical order.
 print(sneakers)
 sneakers.sort() #<-- Permanently sort the list alphabetically. 
 print(sneakers)
-sneakers.sort(reverse=True) #<-- sort list in Reverse alphabetical order. Cannot locate a way to just print this.
-
+sneakers.sort(reverse=True) #<-- sort list in Reverse alphabetical order. Will reverse numerical order. Good for scores by keeping highest at top.
 # ===============================================================
 # To reverse the list you can use the reverse() method. Again there is no way to just print this and 
 # will be a permanent change. To reverse it back you simply rerun the reverse() method
