@@ -73,7 +73,7 @@ print (f'This is another way: [ {variableOne} ]') # <--  f-string formatting
 
 print('Another way by using the format method: {}.'.format(variableOne)) # <-- .format( ) method
 
-print(' Last but not least another way but using concatenation: ' + variableOne) # <-- This is not using formatting but concatenation 
+print(' Last but not least another way using concatenation: ' + variableOne) # <-- concatenation 
 
 # ===============================================================
 # Converting an integer into a string using str() function
