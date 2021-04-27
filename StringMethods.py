@@ -96,5 +96,16 @@ var = var.rstrip()
 print(var)
 
 # ===============================================================
+# To findout what a strings characters starts or ends with use the startwith() or endswith() methods.
+# ===============================================================
+# Example
+
+myString = 'In the beginning there was nothing and at the end was also nothing. The end.'
+if myString.startswith('In') and myString.endswith('end.'): #<-- Ensure to include falsestops etc.
+    print('True')
+else:
+    print('False')
+
+# ===============================================================
 # For full list of string methods you can go to https://www.w3schools.com/python/python_ref_string.asp
 # ===============================================================
