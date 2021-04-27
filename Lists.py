@@ -222,3 +222,4 @@ newListName = [sneakers.lower() for sneakers in sneakers] #<-- This will convert
 print(newListName)                                        #    rather than the map() function. 
 
 # ===============================================================
+
