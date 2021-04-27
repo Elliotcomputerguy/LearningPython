@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-# #Strings
 # A string is a series of characters. Anything inside quotes are considered a string. All programs define and gather differnt types of data. 
 # There are many different data types. Strings are one of them.
 
