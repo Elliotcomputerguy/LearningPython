@@ -5,8 +5,9 @@
 # There are many different data types. Strings are one of them.
 
 # When you create a string you can use '' or "" but not at the same time! You cannot start with " and end with '. 
-# You can put '' inside of "" or put '' inside of "". You can also do the below but is not advisable. The aim is to make
-# your code as conventional and clear as possible for other readers. So choose your posion and use either '' or "". I prefer ''.
+# The quotes around your strings are called delimiters. When you type them into your program they are called string literals. 
+# You can put '' inside of "" or put '' inside of "". You can also do the below but is not advisable. 
+# The aim is to make your code as conventional and clear as possible for other readers. 
 # ===============================================================
 # Example:
 
