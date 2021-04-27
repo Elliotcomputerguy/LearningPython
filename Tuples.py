@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-# #Tuples
 # A tuple is similar to a list which can contain a multitide of different data types. Anything that can be assigned to a variable 
 # can be injected into a tuple. Tuples are accessed the same as lists via indexing and slices. The tuple data type is immutable.
 # The Python interpreter can execute tuples faster than lists.
@@ -85,9 +84,7 @@ print(inventory[1:])
 
 tuple1 = ('value1', 'value2')
 tuple2 = ('value3', 'value4')
-
 tuple1 += tuple2
 
-print(tuple1)
-
 # ===============================================================
+
