@@ -75,8 +75,8 @@ print('Another way by using the format method: {}.'.format(variableOne)) # <-- .
 print(' Last but not least another way using concatenation: ' + variableOne) # <-- concatenation 
 
 # ===============================================================
-# Converting an integer into a string using str() function
-# You can convet an integer value into a string value by using str(). 
+# You cannot pass an integer into a string value without converting to a string data type.
+# You can use the int() function to convert to an integer from a string or use the str() function to convert to a string. 
 # ===============================================================
 # Example:
 
