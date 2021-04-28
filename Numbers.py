@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # #Numbers
-# With any programming language you are going to use numbers for a multitude of reasons. You simply cant avoid them. I have tried.
+# With any programming language you are going to use numbers for a multitude of reasons. You simply cant avoid them.
 # When you instruct python to perform a calculation this is known as an expression. Expressions are made up of values connected
 # by operators. When Python calculates the expression you would say Pyhton has evaluated the expression. 
 # Unlike statements An expression will always evlaute to a single value. This is key to remember.
@@ -16,7 +16,7 @@ var *= 2 # = 22
 print(var)
 
 # ===============================================================
-#2+4 is an expression. Expressions are made up of values (the numbers) connected by operators. 
+# 2+4 is an expression. Expressions are made up of values (the numbers) connected by operators. 
 #     =============================
 #     |   2         +         4   |
 #     | Value    Operator    Value|
@@ -70,6 +70,15 @@ print(var)
 # Parentheses completed:	7 + 153
 # Last operation is an Add:	160
 # ===============================================================
+
+7 + (5 - 1) * ((7 + 1) / (3 - 1))
+     
+# Start with all parentheses first. (5 - 1) then (7 + 1) then (3 - 1)
+# You then divide the evaluated value from 7 + 1 and 3 - 1 as they are in nested parentheses.
+# You then multiply the evaluated value of 5 - 1 and the evaluated value from the division of 7 + 1 and 3 - 1. 
+# You then add 7 to the evlauted value from the multiplication.
+
+# ===============================================================
 # Underscores in numbers are useful when writing long numbers to be more readable.
 # ===============================================================
 # Example:
@@ -95,10 +104,27 @@ print(x, y, z)
 # ===============================================================
 # Example:
 
-UsersDateOfBirth = int(input('Please enter your date of birth:'))
-print('Your birthdate is: ' + str(UsersDateOfBirth)) #<---- Converting the integer into a string
+from datetime import date
 
+import datetime
+year = datetime.date.today().year
 
+userDob = input('Please enter your date of birth:')
+currentAge = str(int(year) - int(userDob))
+futureYear = str(int(year + 10))
+print(futureYear)
+print('Your age is ' + str(currentAge) + '\nYou will be ' + str(int(futureYear) - int(userDob)) + ', 10 years from now in the year ' + str(futureYear))
+
+# ===============================================================
+# If you have a number with a decimal point you can use the float() function. 
+# The int() function will round the number.
+# ===============================================================
+# Example:
+
+myNumber = 2021.4
+print(float(myNumber))
+
+# ===============================================================
 # #The math.ceil(), math.floor() and round() functions
 # When you divide number using the / operator, the expression returns a floating point number. This happens even if the number divides 
 # evenly. For example, 21 / 7 will evaluate to 3.0, not 3. 
