@@ -26,23 +26,19 @@ for i in range(3, 8):
 
 # ===============================================================
 # Another example below where we are passing an argument into the len() function and using the return value as an argument into the range() function.
-# as you cannot pass string data types into the range function. 
+# As you cannot pass string data types into the range function. 
 # ===============================================================
 # Example:
 
-print('-----------------------------')
 LETTERS = 'ABCDEFGHIJKLMOPQRSTUVWXYZ'
-print(len(LETTERS))
-print('-----------------------------')
 for key in range (len(LETTERS)):
     print(key)
 
 # ===============================================================
-
+# Grow a list using a for loop statement with the range function.
 # ===============================================================
 # Example:
 
-# Grow a list using a for loop statement with the range function.
 myList = []
 for i in range(10):
     myList = myList + [i]
@@ -63,13 +59,14 @@ for i in range(0, 50, 5):
     print(i, end=' ')
 
 # ===============================================================
-
 # the last argument in the range() function call is -1. This tells the function to go from start point to end point by -1 each time.
 # This is the same as saying subtract 1 on each itteration. The loop counts down from 10 to1 and does not include 0. 
-
 # ===============================================================
 # Example:
 
 print('\n\nCounting backwards:')
 for i in range(20, 0, -1):
     print(i, end=' ')
+
+# ===============================================================
+
