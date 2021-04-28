@@ -222,4 +222,11 @@ newListName = [sneakers.lower() for sneakers in sneakers] #<-- This will convert
 print(newListName)                                        #    rather than the map() function. 
 
 # ===============================================================
+# Multiple assigment trick also known as tuple unpacking is a shortcut that allows you
+# to assign multiple variables with values in a list in one line. 
+# ===============================================================
+# Example:
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+jordan, nike, yeezy, adidas = sneakers
 
