@@ -223,11 +223,14 @@ print(newListName)                                        #    rather than the m
 
 # ===============================================================
 # Multiple assigment trick also known as tuple unpacking is a shortcut that allows you
-# to assign multiple variables with values in a list in one line. 
+# to assign multiple variables with values in a list in one line. You have the correct amount 
+# of variables or an error will be thrown
 # ===============================================================
 # Example:
 
-sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
-jordan, nike, yeezy, adidas = sneakers
+sneakers = [('Jordan', 'Nike'), ('Yeezy', 'Adidas')]
+for sneaker in sneakers:
+    tupleElement1, tupleElement2 = sneaker
+    print(f'{tupleElement1} {tupleElement2}')
 
 # ===============================================================
