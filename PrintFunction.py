@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 import random
 
-# There is another python instruction called a print() function call. It performs a task to print values to the screen.
+# There is another python instruction called print(). It performs a task to print values to the screen.
 # There are many different functions that come with Python. To call a function means to execute the code that is inside
 # the function parenthesis().
 # A value that is passed into the function call are called arguments. Arguments are the same as values but are only called 
 # arguments when they are passed to function calls. You can also pass an expression to the print() function call instead of a
 # single value. This is because the value that is actually passed to the print() function is the evaluated value of that expression.
-
 # ===============================================================
 # Example:
 
@@ -45,7 +44,9 @@ print('some more code')
 # Example:
 
 for i in range(5):
-    print(random.randint(1, 100,),end='' + '\n') # See what i did to get the value in a straight line. Rather than down the screen.
+    print(random.randint(1, 100,),end='' + '\n') # Use end='' to get a straight line. Rather than down the screen.
+                                                 # If you have another print function below ensure to create a empty print function()
+                                                 # If you do not intend for the string or integer to be put into the print function.
 
 # ===============================================================
 # Example:
