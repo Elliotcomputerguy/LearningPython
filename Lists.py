@@ -234,3 +234,16 @@ for sneaker in sneakers:
     print(f'{tupleElement1} {tupleElement2}')
 
 # ===============================================================
+# Converting the tuple datatype to a list datatype can be achieved with the list() function
+# or if you want to convert from a list to a tuple you can use the tuple() function.
+# ===============================================================
+# Example:
+
+sneakerTuple = ('Jordan', 'Nike', 'Yeezy', 'Adidas')
+print(sneakerTuple, '\n')
+print(list(sneakerTuple), '\n')
+
+sneakerList = list(sneakerTuple)
+print(sneakerList, '\n')
+
+# ===============================================================
