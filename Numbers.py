@@ -90,6 +90,15 @@ x, y, z = 'hello', 'world', 'again'
 print(x, y, z)
 
 # ===============================================================
+# You cannot pass an integer into a string value without converting to a string data type.
+# You can use the int() function to convert to an integer from a string or use the str() function to convert to a string. 
+# ===============================================================
+# Example:
+
+UsersDateOfBirth = int(input('Please enter your date of birth:'))
+print('Your birthdate is: ' + str(UsersDateOfBirth)) #<---- Converting the integer into a string
+
+
 # #The math.ceil(), math.floor() and round() functions
 # When you divide number using the / operator, the expression returns a floating point number. This happens even if the number divides 
 # evenly. For example, 21 / 7 will evaluate to 3.0, not 3. 
