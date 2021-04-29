@@ -83,6 +83,9 @@ print(' Last but not least another way using concatenation: ' + variableOne) # <
 variableNumber = 1
 print(str(variableNumber))
 
+player1Ammo = '8'
+player1Ammo = int(player1Ammo) - 3
+print(player1Ammo)
 # ===============================================================
 # String Imutability. Sequences fall into one or two categories. mutable or immutable. A sequence that is mutable is one that can change. 
 # A sequence that is immutable means unchangable so it is one that cannot change.
