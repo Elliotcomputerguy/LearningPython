@@ -112,6 +112,12 @@ sneakerTuple = tuple(sneakerList)
 print(sneakerTuple, '\n')
 
 # ===============================================================
+# Picking a data structure. Lists, Tuples or Dictionaries. 
+# Use a list when the data is in a natural order, updates are frequent during the program and iteration is the primary purpose.
+# Use a tuple when modification is not required and iteration is a primary requirement. 
+# Use a dictionary when the data is not ordered and order is not mattered. Frequent updates are required and looking up values is
+# a primary purpose.
+# ===============================================================
 
 
 
