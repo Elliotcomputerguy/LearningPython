@@ -209,7 +209,7 @@ print(sneakers)
 
 # ===============================================================
 # List comprehensions allows you to generate a list in just one line of code. A list comprehension combines
-# the for loop and the creation of new elements. This is a more clean. 
+# the for loop and the creation of new elements. This is a cleaner approach. 
 # ===============================================================
 # Example:
 
