@@ -128,6 +128,16 @@ sneakerTuple = tuple(sneakerList)
 print(sneakerTuple, '\n')
 
 # ===============================================================
+# If you have multiple entries in a dictionary or list or tuple and you do not want to ommit all duplicated values 
+# you can use the set() function.
+# ===============================================================
+# Example:
+
+playerGunAmmoInventory = ('8', '8')
+for value in set(playerGunAmmoInventory):
+    print(value)
+
+# ===============================================================
 # Picking a data structure. Lists, Tuples or Dictionaries. 
 # Use a list when the data is in a natural order, updates are frequent during the program and iteration is the primary purpose.
 # Use a tuple when modification is not required and iteration is a primary requirement. 
