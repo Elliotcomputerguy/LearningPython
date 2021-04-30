@@ -11,6 +11,22 @@
 inventory = ()
 
 # ===============================================================
+# If you are adding one element to a tuple you must define the trailing comma.
+# ===============================================================
+# Example:
+
+myTuple = ('value',) #<--- Take away both commas and you will end up with value1valuevaluevaluevaluevalue
+newTuple = ('value1',) #<---- Take away either one of the commas and you will get an error 'can only concatenate tuple (not "str") to tuple'
+for i in myTuple:            
+    newTuple += myTuple
+print(newTuple)
+
+myTuple = ('value',)
+newTuple = ('value1')
+print(myTuple[0]) #<------- As we have added the comma you will see the value evaluate to 'value'
+print(newTuple[0]) #<------ As we have not added the trailing comma the expression will evaluate to 'v'
+
+# ===============================================================
 # Treating a tuple as a condition
 # As a condition an empty tuple is False. As the tuple has no elements this means that the if not inventory is True. 
 # ===============================================================
