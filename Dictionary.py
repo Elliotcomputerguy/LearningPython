@@ -87,9 +87,9 @@ if player1Move == '0':
 elif player1Move == '1':
     print(f'''
             \nRipley doesnt move. squeezing her {player1Gun} tight, her heart beating. She slowly aims the gun
-            \nupwards keeping her arms lowered to not move. '\'BANG\' \'BANG\' \'BANG\' 
+            \nupwards keeping her arms lowered to not make a sudden move. '\'BANG\' \'BANG\' \'BANG\' 
             \nThe alien lunges out with a swipe hitting Ripley. She falls to the floor. The alien hisses, 
-            \ninjured scuttlling off into the darkness of the space ships dark hallway.
+            \ninjured scuttelling off into the darkness of the space ships dark hallway.
     ''')
     player1Health = playerHealth['playerHealthMedium']
     player1HealthInventory = int(player1HealthInventory) -1
@@ -103,8 +103,15 @@ elif player1Move == '1':
 
     player1Health = playerHealth['playerHealthGood']
 # ===============================================================
+# Because dictionaires are not ordered like lists or tuples they cannot be sliced. 
+# Since Python 3.7 and later dictionaries now reemeber their insertion order of their key value pairs.
+# The dictionaries are still unordered as you cannot access in their integer indexes.
+# ===============================================================
+# Removing key value pairs from dictionaries can be done just like we do in with lists. 
+# by using del this option is only available for lists and dictionaries as tuples are immutable.
 
-
+myDictionary = {'Mars': 'Mars has two moons'}
+del myDictionary['Mars']
 
 # ===============================================================
 # Picking a data structure. Lists, Tuples or Dictionaries. 

@@ -108,4 +108,15 @@ sneakers.reverse()
 print(sneakers)
 
 # ===============================================================
+# Index method will return the integer index position of the list element. 
+# If there are duplicates of the element then it will produce the first found.
+# ===============================================================
+# Example:
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+sneakers.index('Jordan')
+
+# ===============================================================
+
+
 
