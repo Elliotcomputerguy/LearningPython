@@ -55,6 +55,7 @@ popped1 = sneakers[1].pop(0)
 print(popped)
 print(popped1)
 
+# ===============================================================
 # if you only know the value of the list element you can use the remove() method. 
 # ===============================================================
 # Example:
@@ -94,6 +95,11 @@ print(sneakers)
 sneakers.sort() #<-- Permanently sort the list alphabetically. 
 print(sneakers)
 sneakers.sort(reverse=True) #<-- sort list in Reverse alphabetical order. Will reverse numerical order. Good for scores by keeping highest at top.
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+for sneaker in sorted(sneakers):
+    print(sneaker)
+
 # ===============================================================
 # To reverse the list you can use the reverse() method. Again there is no way to just print this and 
 # will be a permanent change. To reverse it back you simply rerun the reverse() method
