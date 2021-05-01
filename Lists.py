@@ -234,17 +234,33 @@ for sneaker in sneakers:
     print(f'{tupleElement1} {tupleElement2}')
 
 # ===============================================================
-# Converting the tuple datatype to a list datatype can be achieved with the list() function
-# or if you want to convert from a list to a tuple you can use the tuple() function.
+# Changing the tuple datatype to a list datatype can be achieved with the list() function
+# or if you want to change from a list to a tuple you can use the tuple() function. This also works for dictionaries.
+# As dictionaries are not ordered and if your program wants to use random to iterate over the dictionary to bring back a value
+# or key you can convert to a list.
 # ===============================================================
 # Example:
 
 sneakerTuple = ('Jordan', 'Nike', 'Yeezy', 'Adidas')
 print(sneakerTuple, '\n')
-print(list(sneakerTuple), '\n')
+print(list(sneakerTuple), '\n') #<---- Print the tuple as a list datatype
 
-sneakerList = list(sneakerTuple)
+sneakerList = list(sneakerTuple) #<--- Create a new list datatype with all the tuple elements. 
 print(sneakerList, '\n')
+
+jordan1SneakerBred = {
+    'Jordan' : 'Jordan 1 high Bred',
+    'Size'   : '8.5 US',
+    'Quantity' : '5',
+    }
+import random
+variable = random.choice(list(jordan1SneakerBred.values())) #<---- Print all the dictionary values as a list datatype
+print(variable)
+
+newlist = list(jordan1SneakerBred.values()) #<--- Create a new list datatype with all the dictionary values.  
+print(newlist)                                    # If you do not specify a method only the keys will be returned.
+
+
 
 # ===============================================================
 # If you have multiple entries in a dictionary or list or tuple and you do not want to ommit all duplicated values 
