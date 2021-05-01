@@ -48,14 +48,40 @@ def userProfile(forename, surname, age):
     
 userProfile(forename='Elliot', surname='Stenning', age='35')
 
-
-
-# There is positional arguments which need to be in the same order the parameters were written. 
-# If your function is taking first names as the first argument and then surnames as the second name. It has to be in order. 
-# If these positional arguments are mixes up then your have a first name as the surname and a surname as the first name.
-#  
+# ===============================================================
+# You can assign default values for each parameter if the arguments are not passed into the function call.
+# If you have a parameter that is not using a default value it will need to be placed after any parameter with default values. 
 # ===============================================================
 # Example:
+
+def userProfile1(forename='firstName', surname='SecondName', age='18'):
+    dict = {}
+    dict.setdefault('forename', forename)
+    dict.setdefault('surname', surname)
+    dict.setdefault('age', age)
+
+    userInfo = print('Hello', dict['forename'], 'your information has been stored...')
+    return userInfo
+    
+userProfile1(surname='Stenning', age='35')
+
+# ===============================================================
+# Positional arguments which need to be in the same order the parameters were written. 
+# If your function is taking first names as the first argument and then surnames as the second name. It has to be in order. 
+# If these positional arguments are mixes up then your have a first name as the surname and a surname as the first name.
+# ===============================================================
+# Example:
+
+
+
+
+
+
+
+
+
+
+
 
 def Yes_Or_No(param):
     answerTuple = ('yes', 'no')
