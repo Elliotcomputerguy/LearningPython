@@ -63,7 +63,7 @@ def userProfile1(forename='firstName', surname='SecondName', age='18'):
     userInfo = print('Hello', dict['forename'], 'your information has been stored...')
     return userInfo
     
-userProfile1(surname='Stenning', age='35')
+userProfile1(surname='Stenning', age='35') #<--------- The forname variable is not included in the parenteses and will use the default value.
 
 # ===============================================================
 # Positional arguments which need to be in the same order the parameters were written. 
@@ -72,28 +72,14 @@ userProfile1(surname='Stenning', age='35')
 # ===============================================================
 # Example:
 
-
-
-
-
-
-
-
-
-
-
-
 def Yes_Or_No(param):
     answerTuple = ('yes', 'no')
-    if param in answerTuple[0]:
-        return answerTuple[0]
-    elif param in answerTuple[1]:
-        return answerTuple[1]
-    else:
-        answer = ('You did not enter yes or no!')
-        return answer
-    
-userQuestion = input('Enter Yes or no:').lower().strip()
+    for i in range(len(answerTuple)):
+        if param.lower().strip() == answerTuple[i]:
+            answer = answerTuple[i]
+            return answer
+
+userQuestion = input('Enter Yes or no:')
 print(Yes_Or_No(userQuestion))
 
 # ===============================================================
