@@ -1,12 +1,10 @@
 #!/usr/bin/env python
 
 # Methods are just like functions, except they are attached to a non-module value with a period.
-
 # A function is not a method just because it is in a module. It can some times get confusing. Example; pyperclip.copy() is not a method but
 # indeed a module. It is a function that is inside the pyperclip module. Most data types like strings have methods. 
 
-# Upper() and lower() 
-# will evaluate to an upper or lower case version of that string.
+# Upper() and lower() methods will evaluate to an upper or lower case version of a string.
 # ===============================================================
 # Example:
 
@@ -81,7 +79,6 @@ print(var)
 # ===============================================================
 # Python string method strip() returns a copy of the string in which all chars have been stripped from the beginning and 
 # the end of the string (default whitespace characters). To remove just left while space use .lstrip() and for right use .rstrip()
-
 # ===============================================================
 # Example
 
@@ -107,7 +104,8 @@ else:
     print('False')
 
 # ===============================================================
-# Split a string into a list where each word is a list item. You can specify the separator, default separator is any whitespace.
+# Split() method can be used to split a string into a list where each word is a list item. 
+# You can specify the separator. The default separator is any whitespace.
 # ===============================================================
 # Example
 
@@ -121,7 +119,24 @@ while not employee_number:
         if len(parts[0]) == 3 and len(parts[1]) == 2 and len(parts[2]) == 4:
             if parts[0].isdigit() and parts[1].isdigit() and parts[2].isdigit():
                 print(''.join(parts))
-                
+
+# ===============================================================
+# The isdigit() method returns True if all the characters are digits, otherwise False.
+# Exponents, like ², are also considered to be a digit.
+# ===============================================================
+# Example
+
+employee_number = ''
+parts = ''
+while not employee_number:
+    employee_number = input('ddd-dd-dddd:>')
+    parts = employee_number.split('-')
+
+    if len(parts) == 3:
+        if len(parts[0]) == 3 and len(parts[1]) == 2 and len(parts[2]) == 4:
+            if parts[0].isdigit() and parts[1].isdigit() and parts[2].isdigit():
+                print(''.join(parts))
+
 # ===============================================================
 # For full list of string methods you can go to https://www.w3schools.com/python/python_ref_string.asp
 # ===============================================================
