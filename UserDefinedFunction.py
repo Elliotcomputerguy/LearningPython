@@ -105,6 +105,28 @@ print(userProfileArgument)
 userProfileArgument = userProfile0('Jack', 'Daniels', '104')
 print(userProfileArgument)
 
+# ===============================================================
+# You pass anything into a function as long as the function has been designed to accept those arguments.
+# 
+
+def jumbleWord(lengthNumber):
+    ''' jumbleWord creates a random string from character the set abcdefghijklmnopqrstuvwxyz1234567890!"£$%&*()@?~#:;
+        The function expects an integer argument to return a string size from the character set. 
+        Example: jumbleWord(10) will return a randomized string size of 10 characters from the above character set. 
+    '''
+    import random
+    passLength = lengthNumber
+    jumbledWord = ''
+    CHARACTERS = 'abcdefghijklmnopqrstuvwxyz1234567890!"£$%&*()@?~#:;'
+    for characters in CHARACTERS:
+        randomizer = random.choice(CHARACTERS)
+        if len(jumbledWord) < passLength:
+            jumbledWord += randomizer
+    return jumbledWord
+
+myList = [jumbleWord(10) for _ in range(10)]
+print(myList)
+
 
 
 
