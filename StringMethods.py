@@ -107,5 +107,21 @@ else:
     print('False')
 
 # ===============================================================
+# Split a string into a list where each word is a list item. You can specify the separator, default separator is any whitespace.
+# ===============================================================
+# Example
+
+employee_number = ''
+parts = ''
+while not employee_number:
+    employee_number = input('ddd-dd-dddd:>')
+    parts = employee_number.split('-')
+
+    if len(parts) == 3:
+        if len(parts[0]) == 3 and len(parts[1]) == 2 and len(parts[2]) == 4:
+            if parts[0].isdigit() and parts[1].isdigit() and parts[2].isdigit():
+                print(''.join(parts))
+                
+# ===============================================================
 # For full list of string methods you can go to https://www.w3schools.com/python/python_ref_string.asp
 # ===============================================================
