@@ -79,6 +79,24 @@ print(var)
 # You then add 7 to the evlauted value from the multiplication.
 
 # ===============================================================
+# The exponent of a number says how many times to use the number in a multiplication.
+# ===============================================================
+# Example:
+
+# In 8^2 the "2" says to use 8 twice in a multiplication,
+# so 8^2 = 8 × 8 = 64
+
+exponent = 8 ** 2
+print(exponent) 
+
+# In words: 5^3 could be called "5 to the third power", "5 to the power 3" or simply "5 cubed"
+# 5 x 5 x 5 = 125
+# 5 x 5 = 25 x 5 = 125
+
+exponent = 5 ** 3
+print(exponent)
+
+# ===============================================================
 # Underscores in numbers are useful when writing long numbers to be more readable.
 # ===============================================================
 # Example:

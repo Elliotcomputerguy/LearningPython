@@ -38,32 +38,43 @@ print(MyMagicBall(userFortuneQuestion)) #<-- This line calls the function and pa
 # Example:
 
 def userProfile(forename, surname, age):
-    dict = {}
+    
+    dict = {} #<---- Local scope
     dict.setdefault('forename', forename)
     dict.setdefault('surname', surname)
     dict.setdefault('age', age)
 
-    userInfo = print('Hello', dict['forename'], 'your information has been stored...')
-    return userInfo
+    return print('Hello', dict['forename'], 'your information has been stored...')
     
-userProfile(forename='Elliot', surname='Stenning', age='35')
+name = input('name>')
+surname = input('surname>')
+age = input('age>')
+
+userProfile(name, surname, age)
 
 # ===============================================================
 # You can assign default values for each parameter if the arguments are not passed into the function call.
-# If you have a parameter that is not using a default value it will need to be placed after any parameter with default values. 
+# If you have a parameter that is not using a default value it will need to be placed after any parameter with default values.
+# We can also make arguments optional by using an assignment operator to an empty string.
 # ===============================================================
 # Example:
 
-def userProfile1(forename='firstName', surname='SecondName', age='18'):
-    dict = {}
-    dict.setdefault('forename', forename)
-    dict.setdefault('surname', surname)
-    dict.setdefault('age', age)
-
-    userInfo = print('Hello', dict['forename'], 'your information has been stored...')
-    return userInfo
+def userProfile1(forename='firstName', surname='SecondName', age=''): #<--- Default values with age as a optional value.
+    dict = {}             
     
-userProfile1(surname='Stenning', age='35') #<--------- The forname variable is not included in the parenteses and will use the default value.
+    if age:                                                        # REMEMBER any parameter using default or optional values
+        dict.setdefault('forename', forename.title())              # must come ater any parameters not using default or optional values!
+        dict.setdefault('surname', surname.title())                # The if condition will evaluate to True if age is True. 
+        dict.setdefault('age', age)                                # If not it will only write the forename and surname to the dictionary. 
+        userInfo = f'hello {forename} {surname} {age} your information has been stored'  
+    else:
+        dict.setdefault('forename', forename.title())  
+        dict.setdefault('surname', surname.title())
+        userInfo = f'hello {forename} {surname} your information has been stored'
+    return userInfo
+
+userProfileArgrument = userProfile1(surname='stenning') #<--------- The forname variable is not included in the parenteses and will use the default value.
+print(userProfileArgrument)
 
 # ===============================================================
 # Positional arguments which need to be in the same order the parameters were written. 
@@ -71,6 +82,36 @@ userProfile1(surname='Stenning', age='35') #<--------- The forname variable is n
 # If these positional arguments are mixes up then your have a first name as the surname and a surname as the first name.
 # ===============================================================
 # Example:
+
+# is using global scope ans using positional parameters
+
+userProfileList = []  #<------------- Global scope
+def userProfile0(forename, surname, age):
+    
+    userProfileList.append(forename.title().strip()) #<------------- Global scope
+    userProfileList.append(surname.title().strip())  #<------------- Global scope 
+    userProfileList.append(age)                      #<------------- Global scope
+
+    if forename and surname and age in userProfileList:
+        userInfo = 'Hello, %s, your information has been stored...' % (forename)
+        return userInfo
+
+userProfileName = input('name:')
+userProfileSurname = input('surname:')
+userProfileAge = input('Age:')
+userProfileArgument = userProfile0(userProfileName, userProfileSurname, userProfileAge)
+print(userProfileArgument)
+
+userProfileArgument = userProfile0('Jack', 'Daniels', '104')
+print(userProfileArgument)
+
+
+
+
+
+
+
+
 
 def Yes_Or_No(param):
     answerTuple = ('yes', 'no')
