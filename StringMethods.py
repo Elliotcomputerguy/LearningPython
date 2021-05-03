@@ -119,7 +119,7 @@ while not employee_number:
         if len(parts[0]) == 3 and len(parts[1]) == 2 and len(parts[2]) == 4:
             if parts[0].isdigit() and parts[1].isdigit() and parts[2].isdigit():
                 print(''.join(parts))
-
+    
 # ===============================================================
 # The isdigit() method returns True if all the characters are digits, otherwise False.
 # Exponents, like ², are also considered to be a digit.
