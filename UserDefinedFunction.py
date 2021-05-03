@@ -3,7 +3,7 @@
 # User defined functions break code down into smaller segments and are purposely desgined to perfrom specific actions. 
 # Instead of repeating your code further down in your program to execute the same task you would call your function. 
 # Python has built-in functions like print() range() len() etc. They all return a value when you pass an arguemnt inbetween
-# the parenteses. Range() can take up to three arguments. The function is made up of two parts known as the function signature 
+# the parenteses. Range() can take up to three arguments. Functions are made up of two parts known as the function signature 
 # which defines the name of the function with the keyword def and expected parameters inside of the parentheses. 
 # This will be the first line of the function. The function body contains the block of code that will execute everytime 
 # the function is called. When you want to find out what a function does you can call the help() function with the function inside
@@ -14,10 +14,10 @@
 # Example:
 
 def MyMagicBall(fortuneReply):
-    ''' A return value of yes/no or maybe will be returned to a users input ''' #<--- This is called a docstring for the help() function.
-    import random                                                               # By placing a docstring into the fucntion it will help
-    dict = {                                                                    # other developers understand what the function does.                                                                          
-        'Yes': 'Yes, your chances are highly likely',                           #  help(myMagicBall)
+    ''' A return value of yes/no or maybe to a users input ''' #<--- This is called a docstring for the help() function.
+    import random                                                    # By placing a docstring into the fucntion it will help
+    dict = {                                                         # other developers understand what the function does.                                                                          
+        'Yes': 'Yes, your chances are highly likely',                #  help(myMagicBall)
         'No' : 'No, it is not probable',
         'Maybe' : 'Maybe, the forces are unclear',
     }
@@ -31,7 +31,7 @@ print(MyMagicBall(userFortuneQuestion)) #<-- This line calls the function and pa
 # ===============================================================
 # Parameters are variables that contain the arguments passed when a function is called. Parameters are automatically deleted when 
 # the function returns. A parameter is a variable name in between the parentheses in the def statement. 
-# In other words an argument is the value that is assigned to a variable between the parentheses of a function.
+# In other words an argument is the value that is assigned to a variable which are called parameters between the parentheses of a function.
 # Arguments can be passed into a function in multiple ways. Keyword arguments use assignment statements directly assigning the 
 # argument (value) to the variable (parameter) inside the function call. 
 # ===============================================================
@@ -55,7 +55,7 @@ userProfile(name, surname, age)
 # ===============================================================
 # You can assign default values for each parameter if the arguments are not passed into the function call.
 # If you have a parameter that is not using a default value it will need to be placed after any parameter with default values.
-# We can also make arguments optional by using an assignment operator to an empty string.
+# You can also make arguments optional by using an assignment operator to an empty string.
 # ===============================================================
 # Example:
 
@@ -65,7 +65,7 @@ def userProfile1(forename='firstName', surname='SecondName', age=''): #<--- Defa
     if age:                                                        # REMEMBER any parameter using default or optional values
         dict.setdefault('forename', forename.title())              # must come ater any parameters not using default or optional values!
         dict.setdefault('surname', surname.title())                # The if condition will evaluate to True if age is True. 
-        dict.setdefault('age', age)                                # If not it will only write the forename and surname to the dictionary. 
+        dict.setdefault('age', age)                                # else it will only write the forename and surname to the dictionary. 
         userInfo = f'hello {forename} {surname} {age} your information has been stored'  
     else:
         dict.setdefault('forename', forename.title())  
@@ -77,13 +77,13 @@ userProfileArgrument = userProfile1(surname='stenning') #<--------- The forname 
 print(userProfileArgrument)
 
 # ===============================================================
-# Positional arguments which need to be in the same order the parameters were written. 
+# You then have positional arguments which need to be input into the function in the same order the parameters were written. 
 # If your function is taking first names as the first argument and then surnames as the second name. It has to be in order. 
-# If these positional arguments are mixes up then your have a first name as the surname and a surname as the first name.
+# If these positional arguments are mixed up then your have a first name as the surname and a surname as the first name.
 # ===============================================================
 # Example:
 
-# is using global scope ans using positional parameters
+# is using global scope and using positional parameters
 
 userProfileList = []  #<------------- Global scope
 def userProfile0(forename, surname, age):
@@ -106,11 +106,58 @@ userProfileArgument = userProfile0('Jack', 'Daniels', '104')
 print(userProfileArgument)
 
 # ===============================================================
-# You pass anything into a function as long as the function has been designed to accept those arguments.
+# You can also pass an arbitrary number of arguments into a function from the calling statement. 
+# using the *args parmameter for positional or **kwargs for keyword arguments. Your arguments dont have to be 
+# named args or kwargs but must have the * for positional and ** for keyword arguments next to the name of choice.
+# All arguments will be placed inside of a tuple.
+# ===============================================================
+# Example:
+
+def sneakerStock(*args):
+    sneakers = {
+
+        'model' : 'Jordan 1 Retro High Travis Scott',
+        'stock' : '5',
+        '7' : '0',
+        '8' : '1',
+        '9' : '1',
+        '10' : '2',
+        '11' : '1',
+    }
+
+    for sneaker in range(len(args)): #<-- For range of tuple iterate over items.
+        if args[sneaker] in sneakers: #<-- if the tuple element exist in the dictionary then proceed
+            lookup = sneakers.get(args[sneaker], 'Invalid Lookup') #<--- get items from dictionary
+            print(lookup)   #<------ print items
+
+sneakerStock('model', 'stock', '7')
+
+# ===============================================================
+# Calling a function from another function is what functions are designed for. 
 # 
 
+def passwordCreator():
+    ''' Generate a number of choice of randomized passwords with the choice of password length '''
+    print('''
+        
+██████   █████  ███████ ███████ ██     ██  ██████  ██████  ██████       ██████  ███████ ███    ██ ███████ ██████   █████ ████████  ██████  ██████  
+██   ██ ██   ██ ██      ██      ██     ██ ██    ██ ██   ██ ██   ██     ██       ██      ████   ██ ██      ██   ██ ██   ██   ██    ██    ██ ██   ██ 
+██████  ███████ ███████ ███████ ██  █  ██ ██    ██ ██████  ██   ██     ██   ███ █████   ██ ██  ██ █████   ██████  ███████   ██    ██    ██ ██████  
+██      ██   ██      ██      ██ ██ ███ ██ ██    ██ ██   ██ ██   ██     ██    ██ ██      ██  ██ ██ ██      ██   ██ ██   ██   ██    ██    ██ ██   ██ 
+██      ██   ██ ███████ ███████  ███ ███   ██████  ██   ██ ██████       ██████  ███████ ██   ████ ███████ ██   ██ ██   ██   ██     ██████  ██   ██ 
+
+        
+        ''')
+
+    userPasswordLength = input('[+] Please enter the length size 0 - 50:>')
+    userGeneratedPasswords = input(' [+] How many passwords would you like to create:>')
+    userPassList = [jumbleWord(userPasswordLength) for _ in range(userGeneratedPasswords)]
+    generatedPasswordList = f' [+] Your list has been created using {userPasswordLength} as your pass length\n {userPassList}'
+    return generatedPasswordList
+
+
 def jumbleWord(lengthNumber):
-    ''' jumbleWord creates a random string from character the set abcdefghijklmnopqrstuvwxyz1234567890!"£$%&*()@?~#:;
+    ''' jumbleWord creates a random string from the character set abcdefghijklmnopqrstuvwxyz1234567890!"£$%&*()@?~#:;
         The function expects an integer argument to return a string size from the character set. 
         Example: jumbleWord(10) will return a randomized string size of 10 characters from the above character set. 
     '''
@@ -123,12 +170,6 @@ def jumbleWord(lengthNumber):
         if len(jumbledWord) < passLength:
             jumbledWord += randomizer
     return jumbledWord
-
-myList = [jumbleWord(10) for _ in range(10)]
-print(myList)
-
-
-
 
 
 
