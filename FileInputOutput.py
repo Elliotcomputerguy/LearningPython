@@ -111,7 +111,8 @@ absPath.parents[1] #<--------- C:\
 
 
 
-
+for path in absPath.rglob('PythonText.txt'):
+    print(path)
 
 
 
