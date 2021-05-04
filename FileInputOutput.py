@@ -67,9 +67,10 @@ absPath = relPath.resolve()
 print(absPath)
 
 # ===============================================================
-# pathlib provides a function to check all directories in the path using the parents attribute. The parent attribute will just return the 
-# first parent directory. When the parents attriute is used all directories are returned in a reverse order. The parents attribute is a
-# parent is a shortcut for .parents[0]. 
+# pathlib provides a function to check directories in the system path using the parent and parents attribute. While The parent attribute will 
+# return the first parent directory. which is a shortcut for parents[0]. The parents attriute will return all directories 
+# in the filesystem path in a reverse order. When you use the attributes parents and parent you need to pipe them into a list 
+# otherwise you will not see the iterable return.   
 # ===============================================================
 # Example:
 
@@ -87,9 +88,47 @@ absPath.parents[0] #<--------- C:\users\
 absPath.parents[1] #<--------- C:\
 
 # ===============================================================
-# 
+# If the filepath is absolute you can use the anchor attribute to access the top level file system. anchor will return a string rather than
+# a path object. If the path is relative it will return an empty string. 
 # ===============================================================
 # Example:
+
+absPath = pathlib.Path('c:/users/elliotstenning')
+print(absPath.anchor)
+
+# ===============================================================
+# File names consist of two parts. The name of the file called the stem and the file extention called the suffix. The attribute 
+# .name will return both parts of the file including the stem and suffix. The .stem attribute will highlight the file name and the 
+# .suffix will return the file extention.  
+# ===============================================================
+# Example:
+#                               stem  suffix
+#                                |    |
+# C:\   users   \elliotstenning\name.txt 
+#  |      |            |          |
+#anchor  Parent      parent     Name 
+
+absPath = pathlib.Path('c:/users/elliotstenning/file.txt')
+print(absPath.name)
+print(absPath.stem)
+print(absPath.suffix)
+
+# ===============================================================
+# To check if a file exists you can use the .exists() method. The method will return a True of exists or a False if not. 
+# You can also check if a filepath refers to a file or directory with the .if_file() method.
+# ===============================================================
+# Example
+
+absPath = pathlib.Path('c:/users/elliotstenning/file.txt') 
+print(absPath.exists())
+
+print(absPath.is_file())
+
+print(absPath.is_dir())
+
+
+
+
 
 # But this 99% of the time does not return the absolute path unless you are working local to the directory. 
 # There is another method that pathlib provides that allows you to iterate through a filesystem to locate a file called rglob. 
