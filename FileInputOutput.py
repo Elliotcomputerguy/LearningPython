@@ -38,9 +38,9 @@ print(pathlib.Path.cwd())
 
 # ===============================================================
 # A filesystem path that begins at the top level directory of the file system is known as the absolute file path. 
-# A filesystem path that does not start from the top level directory is called a relative file path. A relative file path
-# is used when the files the application is working with are stored in the same directory as the program and ony references the local file.
-# You can establish if the file path is absolute by using .is_absolute(). If you want to lengthen a relative path you can use the / operator
+# A filesystem path that does not start from the top level directory is called a relative file path. There are special 
+# names that can be used to reference direcotories. The single (.) will link to the current working directory. The double (..) will identify the parent directory.
+# You can establish if the file path is absolute by using .is_absolute(). If you want to lengthen a relative path you can use the / operator.
 # ===============================================================
 # Example:
 
@@ -50,7 +50,7 @@ print(absPath.is_absolute())
 absPathCWD = pathlib.Path.cwd() #<----------- absolute file path to current working directory
 print(absPathCWD.is_absolute())
 
-relPath = pathlib.Path('PythonText.txt') #<--------- relative file path
+relPath = pathlib.Path('/parent/PythonText.txt') #<--------- relative file path
 print(relPath.is_absolute())
 
 print(absPath / relPath) #<--- You can lengthen the path from a relative path to an absolute path. 
@@ -126,6 +126,56 @@ print(absPath.is_file())
 
 print(absPath.is_dir())
 
+# ===============================================================
+# Creating a new directory or file you can use the .mkdir() function and to create a file use the .touch() function.  
+# You will need to import Path from pathlib. 
+# ===============================================================
+# Example
+
+# To create a directory create an absolute path and assign it to a variable. Use the / operator to create your parent directory. 
+# If you want to create a nested directory you can add the 'parents=True' key argument inbetween the parentheses of mkdir(). 
+# If the directories already exist you will get an error so to silence the error you can add another key argument into the mkdir()
+# function 'exist_ok=True' This is an if statement equivelent. 
+#                      
+#                   if not strPth.exists():
+#                            strPath.mkdir()
+
+# [Single directory with file]  
+strPath = Path.home() / 'parent1'
+strPath.mkdir(exist_ok=True) #<----- Will avoid the error file already exists equiv - if not strPath.exists(): strPath.mkdir()
+if strPath:
+    file = strPath / 'file.txt' #<-------------------------------- join the absolute path to the relative path and assign to variable
+    file.touch()        #<------------------------- Create file 
+else:
+    print(f'{strPath} does not exist')
+
+# [Nested directory with file]
+
+strPath = Path.home() / 'parent1' / 'parent2' / 'parent3'
+strPath.mkdir(exist_ok=True, parents=True) #<----- Have added extra key argument parents=True to create multiple nested directories
+if strPath:
+    file = strPath / 'file1.txt' #<-------------------------------- join the absolute path to the relative path and assign to variable
+    file.touch()        #<------------------------- Create file 
+else:
+    print(f'{strPath} does not exist')
+
+# ===============================================================
+# Iterating over the contents of a single absolute path is possible with pathlib iterdir(). 
+# ===============================================================
+# Example
+
+strPath = Path.home() / 'parent1' / 'parent2' / 'parent3' #<------------- Create path object 
+strPath.mkdir(exist_ok=True, parents=True) #<-------------- create the directories with mkdir()
+file = strPath / 'file1.txt' #<-------------------- join the absolute path with the relative path
+file.touch()
+
+for path in strPath.iterdir():
+    print(path)
+
+# ===============================================================
+# 
+# ===============================================================
+# Example
 
 
 
