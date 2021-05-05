@@ -135,7 +135,6 @@ print('Your age is ' + str(currentAge) + '\nYou will be ' + str(int(futureYear) 
 
 # ===============================================================
 # If you have a number with a decimal point you can use the float() function. 
-# The int() function will round the number.
 # ===============================================================
 # Example:
 
