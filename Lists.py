@@ -213,6 +213,14 @@ print(sneakers)
 # ===============================================================
 # Example:
 
+myList = []
+for i in range(10):
+    myList += [i]
+    print(myList)
+
+myList = [i for i in range(10)]
+print(myList)
+
 sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
 newListName = [sneakers[element] for element in range(len(sneakers))]
 print(newListName)
