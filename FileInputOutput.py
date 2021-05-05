@@ -11,15 +11,16 @@
 # Example:
 
 import pathlib #<---------- Import pathlib to use the module 
+from pathlib import Path #<---------- Import Path from pathlib
 
 # Using pathlib i can use the forward slash and it will resolve perfectly fine for Wintel directories. 
 # Plus you could if you wanted use a raw string or double //.
 
-path = pathlib.path('c:/users/ElliotStenning/Documents/python/pythontext.txt')
+path = pathlib.Path('c:/users/ElliotStenning/Documents/python/PythonText.txt')
 
-path = pathlib.path(r'c:\users\ElliotStenning\Documents\python\pythontext.txt') #<----- Raw string
+path = pathlib.Path(r'c:\users\ElliotStenning\Documents\python\PythonText.txt') #<----- Raw string
 
-path = pathlib.path('c:\\users\\ElliotStenning\\Documents\\python\\pythontext.txt') #<----- Double back slash
+path = pathlib.Path('c:\\users\\ElliotStenning\\Documents\\python\\PythonText.txt') #<----- Double back slash
 
 # ===============================================================
 # as well as allowing you to create path objects pathlib allows you to use pathlib.Path.home() to obtain the
@@ -132,7 +133,7 @@ print(absPath.is_dir())
 # ===============================================================
 # Example
 
-# To create a directory create an absolute path and assign it to a variable. Use the / operator to create your parent directory. 
+# To create a directory firstly create an absolute path and assign it to a variable. Use the / operator to create your parent directory. 
 # If you want to create a nested directory you can add the 'parents=True' key argument inbetween the parentheses of mkdir(). 
 # If the directories already exist you will get an error so to silence the error you can add another key argument into the mkdir()
 # function 'exist_ok=True' This is an if statement equivelent. 
@@ -141,7 +142,8 @@ print(absPath.is_dir())
 #                            strPath.mkdir()
 
 # [Single directory with file]  
-strPath = Path.home() / 'parent1'
+
+strPath = pathlib.Path.home() / 'parent1'
 strPath.mkdir(exist_ok=True) #<----- Will avoid the error file already exists equiv - if not strPath.exists(): strPath.mkdir()
 if strPath:
     file = strPath / 'file.txt' #<-------------------------------- join the absolute path to the relative path and assign to variable
@@ -151,7 +153,7 @@ else:
 
 # [Nested directory with file]
 
-strPath = Path.home() / 'parent1' / 'parent2' / 'parent3'
+strPath = pathlib.Path.home() / 'parent1' / 'parent2' / 'parent3'
 strPath.mkdir(exist_ok=True, parents=True) #<----- Have added extra key argument parents=True to create multiple nested directories
 if strPath:
     file = strPath / 'file1.txt' #<-------------------------------- join the absolute path to the relative path and assign to variable
@@ -159,12 +161,29 @@ if strPath:
 else:
     print(f'{strPath} does not exist')
 
+# Creating multiple files from a list.
+
+strPath = pathlib.Path.home()
+
+strPathList = [
+
+    strPath / 'file1.jpg',
+    strPath / 'file2.txt',
+    strPath / 'parent1' / 'parent2' / 'file.py',
+    strPath / 'parent1' / 'file.json',
+]
+
+print(strPathList)
+
+for dir in strPathList:
+    dir.touch()
+
 # ===============================================================
-# Iterating over the contents of a single absolute path is possible with pathlib iterdir(). 
+# Iterating over the contents of a single absolute path is possible with pathlib iterdir().
 # ===============================================================
 # Example
 
-strPath = Path.home() / 'parent1' / 'parent2' / 'parent3' #<------------- Create path object 
+strPath = pathlib.Path.home() / 'parent1' / 'parent2' / 'parent3' #<------------- Create path object 
 strPath.mkdir(exist_ok=True, parents=True) #<-------------- create the directories with mkdir()
 file = strPath / 'file1.txt' #<-------------------- join the absolute path with the relative path
 file.touch()
@@ -173,9 +192,62 @@ for path in strPath.iterdir():
     print(path)
 
 # ===============================================================
-# 
+# Locating files in directories can be achieved utilising the Path.glob() method. To search for a file you pass the 
+# a wildcard character * and glob() will return any paths that signifies a pattern match to the argument passed.
+# You can pass multiple search wildcards on the current directory. You can pass *2* to locate files that start with a 2. 
+# name? wildcard will idenitfy anything beginning with name. combining wildcards *name.?? will bring back anything starting with name
+# and followed by a dot and two more characters. The bracket [5] wilcard will only match what is in the brackets. 
 # ===============================================================
 # Example
+
+strPath = pathlib.Path.home() / 'parent1' / 'parent2' / 'parent3' #<------------- Create path object 
+strPath.mkdir(exist_ok=True, parents=True) #<-------------- create the directories with mkdir()
+file = strPath / 'file1.txt' #<-------------------- join the absolute path with the relative path
+file.touch()
+
+for path in strPath.glob('*.txt'): #<-------------------This will bring back any file in this absolute path that matches *.txt
+    print(path)
+
+for path in strPath.glob('*.py'): #<-------------------This will bring back any file in this absolute path that matches *.txt
+    print(path)
+
+# ===============================================================
+# With glob() and iterdir() they only identify the paths local to the directory that is called. Subdirectories are not identified.
+# Using the ** wildcard character makes the pattern recusrive. Using '**/' tells glob() to match the current directory and subdirectories.
+# rglob() is a shorthand method for recusrive matching. You do not need the wildcards.  
+# ===============================================================
+# Example
+
+strPath = pathlib.Path('C:/')
+
+for path in strPath.glob('**/*PythonText.txt'):
+    print(path)
+
+for path in strPath.rglob('PythonText.txt'):
+    print(path)
+
+# ===============================================================
+# Moving directories or files use the replace() method to move directories and files. This is also can rename directories. 
+# If the destination directory already exists the replace() method will over write the destination. Ensure to check that the 
+# destination does not already exist.
+# To delete files the uplink() method is used. To delete directories the rmdir() method is used. 
+# ===============================================================
+# Example
+
+# Create the directories and a file
+strPathSource = pathlib.Path.home() / 'dirA' / 'dirB' #<----- Create the path object with two directories
+strPathSource.mkdir(exist_ok=True, parents=True) #<------- make the new directories 
+file = strPathSource / 'file1.txt' #<---------- create a file object and assign the path to variable file
+file.touch() #<----------- create the file
+print(strPathSource)
+strPathSource = pathlib.Path.home() / 'dirA' / 'dirB' / 'file.txt'
+print(strPathSource)
+strPathDestination = pathlib.Path.home() / 'dirA' / 'file.txt'
+print(strPathDestination)
+if not strPathDestination.exists():
+    strPathSource.replace(strPathDestination)
+
+
 
 
 
@@ -206,11 +278,11 @@ for path in absPath.rglob('PythonText.txt'):
 
 
 
-import os
+#import os
 
-def find(name, path):
-    for root, dirs, files in os.walk(path):
-        if name in files:
-            return os.path.join(root, name)
+#def find(name, path):
+#    for root, dirs, files in os.walk(path):
+#        if name in files:
+#            return os.path.join(root, name)
 
-print(find('PythonText.txt', 'c:\\'))
+#print(find('PythonText.txt', 'c:\\'))
