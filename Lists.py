@@ -209,12 +209,48 @@ print(sneakers)
 
 # ===============================================================
 # List comprehensions allows you to generate a list in just one line of code. A list comprehension combines
-# the for loop and the creation of new elements. This is a cleaner approach. 
+# the for loop and the creation of new elements. 
+
+# for i in range(10):
+#    myList += [i]
+#    print(myList)
+
+# Step by step to create a list comprehension. Using the above as an example. 
+# Step 1: You first create an assigment statment creating a list.
+# myList = []
+# Step 2: The [i] will be the first ingredient inside the brackets. We dont wrap any brackets around the variable as it is already in the list brackets.
+# myList = [i] 
+# Step 3: Add the top line. 'for i in range(10)' and your done. 
+# myList = [i for i in range(10)]
+#
+# So always start from the furthest indented code the [i] in this case right to left. Then go to the top line from left to right. Doing
+# this you learn how to unpack them into for loops and assemble them into list comprehensions. When unpacking the list comprehension
+# remember to initalise the variable assigned to your list and to add the augmented operators or comparison opertor. 
 # ===============================================================
 # Example:
 
+myList = []
+for i in range(10):
+    myList += [i]
+    print(myList)
+
+myList = [i for i in range(10)]
+print(myList)
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+newListName = []
+for element in range(len(sneakers)):
+    newListName += sneakers[element]
+print(newListName)
+
 sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
 newListName = [sneakers[element] for element in range(len(sneakers))]
+print(newListName)
+
+sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
+newListName = []
+for sneakers in sneakers:
+    newListName += [sneakers.lower()]
 print(newListName)
 
 sneakers = ['Jordan', 'Nike', 'Yeezy', 'Adidas']
@@ -259,8 +295,6 @@ print(variable)
 
 newlist = list(jordan1SneakerBred.values()) #<--- Create a new list datatype with all the dictionary values.  
 print(newlist)                                    # If you do not specify a method only the keys will be returned.
-
-
 
 # ===============================================================
 # If you have multiple entries in a dictionary or list or tuple and you do not want to ommit all duplicated values 

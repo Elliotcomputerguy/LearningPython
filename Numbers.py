@@ -37,8 +37,8 @@ print(var)
 #     %              Mod        7 % 3 = 1
 # ==========================================
 # ===============================================================
-# #Integers and Floating points
-#Whole numbers like 4, 0, 99 are called integers. Numbers with fractions or decimal points (3.5 or 42.1) are floating point numbers.
+# Integers and Floating points
+# Whole numbers like 4, 0, 99 are called integers. Numbers with fractions or decimal points (3.5 or 42.1) are floating point numbers.
 # ===============================================================
 # Example:
 
