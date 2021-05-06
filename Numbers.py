@@ -35,6 +35,7 @@ print(var)
 #     /            Division     5 / 3 = 1.6666666666666666666666666666667
 #     //       Floor division   5 // 3 = 1
 #     %              Mod        7 % 3 = 1
+#     +-                        10 +- 5 = 5
 # ==========================================
 # ===============================================================
 # Integers and Floating points
@@ -54,6 +55,7 @@ print(var)
 # E Exponents (ie Powers and Square Roots, etc.)
 # MD Multiplication and Division (left-to-right)
 # AS Addition and Subtraction (left-to-right)
+#
 # Divide and Multiply rank equally (and go left to right).
 # Add and Subtract rank equally (and go left to right)
 # ===============================================================
