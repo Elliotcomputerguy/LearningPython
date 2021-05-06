@@ -129,7 +129,7 @@ print(absPath.is_dir())
 
 # ===============================================================
 # Creating a new directory or file you can use the .mkdir() function and to create a file use the .touch() function.  
-# You will need to import Path from pathlib. 
+# You will need to import Path from pathlib. from pathlib import * 'or Path'
 # ===============================================================
 # Example
 
@@ -165,7 +165,7 @@ else:
 
 strPath = pathlib.Path.home()
 
-strPathList = [
+strPathFileList = [
 
     strPath / 'file1.jpg',
     strPath / 'file2.txt',
@@ -178,8 +178,23 @@ print(strPathList)
 for dir in strPathList:
     dir.touch()
 
+# create multiple directories from a list
+
+strPathDir = pathlib.Path.home()
+
+strPathDirList = [
+
+    strPathDir / 'DirM',
+    strPathDir / 'DirN' / 'DirO',
+    strPathDir / 'DirP',
+
+]
+
+for dir in strPathDirList:
+    dir.mkdir(exist_ok=True, parents=True)
+
 # ===============================================================
-# Iterating over the contents of a single absolute path is possible with pathlib iterdir().
+# Iterating over the contents of a (single directory) is possible with pathlib iterdir().
 # ===============================================================
 # Example
 
@@ -188,8 +203,19 @@ strPath.mkdir(exist_ok=True, parents=True) #<-------------- create the directori
 file = strPath / 'file1.txt' #<-------------------- join the absolute path with the relative path
 file.touch()
 
-for path in strPath.iterdir():
-    print(path)
+# iterate over directories from a list
+strPath = pathlib.Path.home()
+
+strPathList = [
+    strPath / 'parent1',
+    strPath / 'parent1' / 'parent2',
+    strPath / 'parent1' / 'parent2' / 'parent3',
+]
+
+for srchItem in strPathList:
+    strList = list(srchItem.iterdir())
+    for foundItem in strList:
+        print(foundItem)
 
 # ===============================================================
 # Locating files in directories can be achieved utilising the Path.glob() method. To search for a file you pass the 
@@ -230,50 +256,102 @@ for path in strPath.rglob('PythonText.txt'):
 # Moving directories or files use the replace() method to move directories and files. This is also can rename directories. 
 # If the destination directory already exists the replace() method will over write the destination. Ensure to check that the 
 # destination does not already exist.
-# To delete files the uplink() method is used. To delete directories the rmdir() method is used. 
+# To delete files the unlink() method is used. To delete directories the rmdir() method is used. The rmdir() method requires the 
+# directory to be empty so you must delete the files first. The shutil() module that includes a rmtree() function can be used 
+# to delete directories with files. 
 # ===============================================================
 # Example
 
-# Create the directories and a file
+# Create nested directories and a file
 strPathSource = pathlib.Path.home() / 'dirA' / 'dirB' #<----- Create the path object with two directories
 strPathSource.mkdir(exist_ok=True, parents=True) #<------- make the new directories 
 file = strPathSource / 'file1.txt' #<---------- create a file object and assign the path to variable file
 file.touch() #<----------- create the file
-print(strPathSource)
-strPathSource = pathlib.Path.home() / 'dirA' / 'dirB' / 'file.txt'
-print(strPathSource)
-strPathDestination = pathlib.Path.home() / 'dirA' / 'file.txt'
-print(strPathDestination)
-if not strPathDestination.exists():
-    strPathSource.replace(strPathDestination)
+
+# Move a file 
+strPathSource = pathlib.Path.home() / 'dirA' / 'dirB' / 'file1'
+strPathDest = pathlib.Path.home() / 'dirA' / 'file1.txt' #<-------- Destination to where we want to move the file
+if not strPathDest.exists():   
+    strPathSource.replace(strPathDest)  #<--------------------- replace the file from source to destination 
+    if strPathDest.exists():
+        print(strPathDest)
+
+# Rename a directory
+strPathSource = pathlib.Path.home() / 'dirA' #<----------------- Current directory name
+strPathDest = pathlib.Path.home() / 'dirC' #<---------------------- New directory name
+if not strPathDest.exists():
+    strPathSource.replace(strPathDest)
+    if strPathDest.exists():
+        print(strPathDest)
+
+# Remove a file 
+strPathDir = pathlib.Path.home() / 'dirC'
+strPathDir.mkdir(exist_ok=True, parents=True)
+filePath = strPathDir / 'file.txt'
+filePath.touch()
+
+print(f'[+] Locating file in directory [{filePath}]')
+if filePath.exists():
+    for path in strPathDir.iterdir():
+        print(f'[+] file {filePath.name} located')
+    print(f'[+] Removing file in directory [{filePath}]')
+    filePath.unlink()
+    filePath = strPathDir / 'file.txt'
+    if filePath.exists():
+        print(f'[-] file [{filePath.name}] has failed to be removed.')
+    else:
+        print(f'[+] file [{filePath.name}] has been removed successfully.')
+
+# Remove empty directory
+strPathDir = pathlib.Path.home() / 'dirC'
+strPathDir.mkdir(exist_ok=True, parents=True)
+
+print('[+] Locating Directory.')
+if strPathDir.exists():
+    print(f'[+] Directory [{strPathDir}] located.')
+    print(f'[+] Removing directory [{strPathDir}].')
+    strPathDir.rmdir()
+    if strPathDir.exists():
+        print(f'[-] Directory [{strPathDir}] has failed to be removed.')
+    else:
+        print(f'[+] Directory [{strPathDir}] has been removed successfully.')
+
+# Remove directory with files using shutil 
+import shutil
+
+strPathDir = pathlib.Path.home() / 'dirC'
+strPathDir.mkdir(exist_ok=True, parents=True)
+file = strPathDir / 'file.txt'
+file.touch()
+
+print('[+] Locating Directory.')
+if strPathDir.exists():
+    print(f'[+] Directory [{strPathDir}] located.')
+    for path in strPathDir.iterdir():
+        print(f'[+] Removing files [{path.name}] ')
+    print(f'[+] Removing directory [{strPathDir}].')
+    shutil.rmtree(strPathDir)
+    strPathDir = pathlib.Path.home() / 'dirC'
+    if strPathDir.exists():
+        print(f'[-] Directory [{strPathDir}] has failed to be removed.')
+    else:
+        print(f'[+] Directory [{strPathDir}] has been removed successfully.')
+
+# ===============================================================
+# Reading and writing to files 
+# ===============================================================
+# Example
 
 
 
 
 
 
-# But this 99% of the time does not return the absolute path unless you are working local to the directory. 
-# There is another method that pathlib provides that allows you to iterate through a filesystem to locate a file called rglob. 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-for path in absPath.rglob('PythonText.txt'):
-    print(path)
 
 
 
