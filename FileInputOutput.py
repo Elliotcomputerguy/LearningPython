@@ -338,22 +338,70 @@ if strPathDir.exists():
         print(f'[+] Directory [{strPathDir}] has been removed successfully.')
 
 # ===============================================================
-# Reading and writing to files 
+# When reading and writing data types using python file objects you can read and write entire files or just one line or even just a character. 
+# Python file objects will do all the encoding and decoding. files are made up of bits that make bytes. There is 8 bits to a byte. 
+# Unlike networks where throughput speeds are measured in bits.
+# data types such as files etc are measured in bytes. When Data types are written to a storage medium. They are written in 
+# a sequence of bytes. Some use two bytes. As the computer processes the data type it can only work with binary bits 1's and 0's.
+# The processor uses an encoding scheme to decode from binary into a human readable format based upon the encoding scheme. 
+# When a line of text is written to a file it will end with a line ending. There are two character flags that mark the line as ended, 
+# known as a carrige return \r and a line feed \n. They are interpreted slightly differntly to each operating system but Python will 
+# resolve line ending automatically. 
+
+# To create a file object you can use the built-in open() function or the Path.open() method. 
 # ===============================================================
 # Example
 
+# The built-in open() function uses three parameters. Create a variable and assign the path to the file. 
 
+strPath = pathlib.Path.home() / 'text1.txt'
+strPath.touch()
+fileObject = open(strPath, mode = 'r', encoding='utf-8')
+print(fileObject.read())
+fileObject.close()
 
+# Path.open() method uses the Path class. You will need to create a path object in order to open a file. There are two keyword 
+# parameters. mode and the encoding parameter. When you open a file you need to explicitly tell python to close the file.
 
+########################################################
+#   Mode   |              Description
+#   'r'    | Creates a file object for reading
+#   'w'    | Creates a file object for writing
+#   'a'    | Creates a file object for appending
+#   'rb'   | Creates a binary file object for reading
+#   'wb'   | Creates a binary file object for writing
+#   'ab'   | Creates a binary file object for appending
+#########################################################
 
+######################################
+#  String          Encoding          #
+######################################
+# 'ascii'           ASCII
+# 'utf-8'           UTF-8
+# 'utf-16'          UTF-16
+# 'utf-32'          UTF-32
+######################################
 
+from pathlib import *
 
+strPath = pathlib.Path.home() / 'text1.txt'
+strPath.touch()
+fileObject = strPath.open(mode = 'r', encoding='utf-8')
+print(fileObject.read())
+fileObject.close()
 
+# ===============================================================
+# Using the with statement the close() method is not required and python will close the file automatically.
+# 
+# ===============================================================
+# Example
 
+from pathlib import *
+strPath = pathlib.Path.home() / 'text1.txt'
+strPath.touch()
 
-
-
-
+with strPath.open(mode='r', encoding='utf-8') as fileObject:
+    
 
 
 #import os
