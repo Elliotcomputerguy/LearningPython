@@ -229,3 +229,6 @@ from passwordCreator import passwordCreator
 print(passwordCreator())
 
 # ===============================================================
+# Refactoring is where your code is working but you want to improve the logic or break it into functions. 
+ # refactoring makes your code more readable easier to extend. 
+# ===============================================================
