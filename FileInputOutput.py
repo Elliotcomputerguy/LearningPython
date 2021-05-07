@@ -348,21 +348,6 @@ if strPathDir.exists():
 # known as a carrige return \r and a line feed \n. They are interpreted slightly differntly to each operating system but Python will 
 # resolve line ending automatically. 
 
-# To create a file object you can use the built-in open() function or the Path.open() method. 
-# ===============================================================
-# Example
-
-# The built-in open() function uses three parameters. Create a variable and assign the path to the file. 
-
-strPath = pathlib.Path.home() / 'text1.txt'
-strPath.touch()
-fileObject = open(strPath, mode = 'r', encoding='utf-8')
-print(fileObject.read())
-fileObject.close()
-
-# Path.open() method uses the Path class. You will need to create a path object in order to open a file. There are two keyword 
-# parameters. mode and the encoding parameter. When you open a file you need to explicitly tell python to close the file.
-
 ########################################################
 #   Mode   |              Description
 #   'r'    | Creates a file object for reading
@@ -382,6 +367,21 @@ fileObject.close()
 # 'utf-32'          UTF-32
 ######################################
 
+# To create a file object you can use the built-in open() function or the Path.open() method. 
+# ===============================================================
+# Example
+
+# The built-in open() function uses three parameters. Create a variable and assign the path to the file. 
+
+strPath = pathlib.Path.home() / 'text1.txt'
+strPath.touch()
+fileObject = open(strPath, mode = 'r', encoding='utf-8')
+print(fileObject.read())
+fileObject.close()
+
+# Path.open() method uses the Path class. You will need to create a path object in order to open a file. There are two keyword 
+# parameters. mode and the encoding parameter. When you open a file you need to explicitly tell python to close the file.
+
 from pathlib import *
 
 strPath = pathlib.Path.home() / 'text1.txt'
@@ -392,7 +392,9 @@ fileObject.close()
 
 # ===============================================================
 # Using the with statement the close() method is not required and python will close the file automatically.
-# 
+# This is best practice allowing Python to close the file rather than you explicitly writing the close statement which 
+# could potenetionaly leave you working with a closed file when you did not intend to close it or your program crashes
+# and leaves the file open which could lead to data coruption. 
 # ===============================================================
 # Example
 
@@ -401,7 +403,117 @@ strPath = pathlib.Path.home() / 'text1.txt'
 strPath.touch()
 
 with strPath.open(mode='r', encoding='utf-8') as fileObject:
-    
+    ReadFile = fileObject.read()
+print(ReadFile)
+
+# ===============================================================
+# Reading data from a file with the read() method reads the contents and will return the content as a string.
+# Each line of text in the file is seperated with a newline character \n. If you assign the string into a list you will see 
+# the newline character. 
+# ===============================================================
+# Example Setup
+
+strPath = pathlib.Path.home() / 'text1.txt'
+if not strPath.exists():
+    strPath.touch()
+with strPath.open(mode='w', encoding='utf-8') as fileObject:
+	newList = (fileObject.write('hello world\nhellow World'))
+
+# ===============================================================
+# Example 
+
+with strPath.open(mode='r', encoding='utf-8') as fileObject:
+	newList = (fileObject.read())
+
+print(newList) #<--- 'hello world\nhello world'
+
+# ===============================================================
+# To remove the newline character you can use .rstrip() 
+# ===============================================================
+# Example 
+
+with strPath.open(mode='r', encoding='utf-8') as fileObject:
+	newList = (fileObject.read().rstrip())
+
+print(newList) #<---- 'hello world hello world'
+
+# ===============================================================
+# You can also read the line by line rather than the whole file using a for loop. It will store each line of the text
+# file into a list and print out exactly how it is input into the file. Again the newline characters are present and have to be striped. 
+# ===============================================================
+# Example
+
+with strPath.open(mode='r', encoding='utf-8') as fileObject:
+    print(fileObject.readlines()) #<--- ['hello world\n', 'hello world']
+
+    for file in fileObject.readlines(): #<----------------------- Due to the newline character it will create unwanted white space that
+        print(file) #<------------------- hello world             can be removed with the rstrip() or use the end paramater in print. 
+                            
+                                        # hello world
+
+    for file in fileObject.readlines():
+        print(file.rstrip())
+
+    for file in fileObject.readlines():
+        print(file, end='')
+
+# ===============================================================
+# To write data to a file you use the write() method and set the mode to write. When you use the write method 
+# it will overwrite any contents already existing in the file. If you want to add to a file use the mode append. 
+# You can only write strings to text files. If you want to write integer values you will have to convert them to a string data type.
+# ===============================================================
+# Example
+
+strPath = pathlib.Path.home() / 'text1.txt'
+
+with strPath.open(mode='w', encoding='utf-8') as fileObject:
+	newList = (fileObject.write('hello world\nhellow World'))
+
+with strPath.open(mode='a', encoding='utf-8') as fileObject:
+	newList = (fileObject.write('hello world\nhellow World'))
+
+# ===============================================================
+# writing lines from a list to a file, reading the file and replacing words from the file with a list of words.
+# ===============================================================
+# Example
+
+from pathlib import *
+strPath = pathlib.Path.home() / 'text1.txt'
+if not strPath.exists():
+    strPath.touch()
+
+someText = [
+    'hello world\n',
+    'hello world\n',
+    'hello world\n',
+]
+
+with strPath.open(mode='w', encoding='utf-8') as fileObject:
+    fileObject.writelines(someText)
+with strPath.open(mode='r', encoding='utf-8') as fileObject:
+    print(fileObject.read())
+
+words = ['hello', 'world',]
+changeWords = ['hey', 'good bye']
+newString=''
+counter = 0
+with strPath.open(mode='r', encoding='utf-8') as fileObject:
+    for file in fileObject.readlines():
+        newString += file.replace(words[counter], changeWords[counter])
+        counter += 1
+        if counter > 1:
+            counter = 0
+print(newString)
+with strPath.open(mode='w', encoding='utf-8') as fileObj:
+    fileObj.write(newString)
+with strPath.open(mode='r', encoding='utf-8') as fileObj:
+    print(fileObj.read())
+
+# ===============================================================
+# 
+# ===============================================================
+# Example
+
 
 
 #import os
