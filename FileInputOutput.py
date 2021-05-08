@@ -173,9 +173,9 @@ strPathFileList = [
     strPath / 'parent1' / 'file.json',
 ]
 
-print(strPathList)
+print(strPathFileList)
 
-for dir in strPathList:
+for dir in strPathFileList:
     dir.touch()
 
 # create multiple directories from a list
@@ -510,12 +510,12 @@ with strPath.open(mode='r', encoding='utf-8') as fileObj:
     print(fileObj.read())
 
 # ===============================================================
-# Counting words in a file can be done with the split method where we put all the words into alist.
+# Counting words in a file can be done with the split method where we put all the words into a list.
 # ===============================================================
 # Example
 
 def countWords(file, drive):
-    ''' count words in file'''
+    ''' count words in file '''
     import pathlib
     from pathlib import Path
     rootPath = pathlib.Path(drive)
@@ -527,11 +527,11 @@ def countWords(file, drive):
             absPath = searchPath
             if absPath.exists():
                 print(f'[+] located absolute path {absPath.parents[0]}')
-                print(f'[+] located file {file}')
-                print(f'[+] Counting words in {file}')
+                print(f'[+] located file {absPath.name}')
+                print(f'[+] Counting words in {absPath.name}')
                 with absPath.open(mode='r', encoding='utf-8') as fileObj:
                     countWords = fileObj.read().split()
-                    counted = f'[+] in {file} there is {len(countWords)} words'
+                    counted = f'[+] In {file} there is {len(countWords)} words'
                     return counted
         
         fileNotFound = f'[-] {file} does not exist. Cannot locate {file} in {drive}'
@@ -544,19 +544,45 @@ def callCountWords():
         'u','v','w','x','y','z',
         ]
 
-    userInputfile = ''
+    userInputFile = ''
     userInputDrive = ''
 
-    while not userInputfile and not userInputDrive:
-        userInputfile = input('Enter file name including suffix:>')
+    while not userInputFile and not userInputDrive:
+        userInputFile = input('Enter file name including suffix:>')
         userInputDrive = input('Enter single drive letter the file can be located at:>').lower().strip()
     while userInputDrive not in DRIVE_LETTERS:
         userInputDrive = input('You have not entered a letter :>')
     userInputDrive += ':/'
-    print(countWords(userInputfile, userInputDrive))
+    print(countWords(userInputFile, userInputDrive))
 
 
 callCountWords()
+
+# ===============================================================
+# Use json modules to store data in json format. The json.dump() allows you to share data wit other programs.
+# the json module uses two arguments to store data.   
+# ===============================================================
+# Example
+
+import json, pathlib
+
+listOfNumbers = [1,2,3,4,5,6,7,8,9,]
+
+pathObject = pathlib.Path.home() / 'numbers.json'
+pathObject.touch()
+with pathObject.open(mode='w', encoding='utf-8') as fileObject:
+    json.dump(listOfNumbers, fileObject)
+
+with pathObject.open(mode='r', encoding='utf-8') as fileObject:
+    jsonData = json.load(fileObject)
+
+print(jsonData)
+
+# ===============================================================
+
+
+
+
 
 #import os
 
