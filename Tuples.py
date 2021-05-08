@@ -40,7 +40,7 @@ if not inventory:
 # ===============================================================
 # Example:
 
-inventory = ('value1', 'value2', 'value3')
+inventory = ('value1', 'value2', 'value3',)
 
 # ===============================================================
 # loop through a tuple

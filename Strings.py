@@ -75,17 +75,22 @@ print('Another way by using the format method: {}.'.format(variableOne)) # <-- .
 print(' Last but not least another way using concatenation: ' + variableOne) # <-- concatenation 
 
 # ===============================================================
-# You cannot pass an integer into a string value without converting to a string data type.
-# You can use the int() function to convert to an integer from a string or use the str() function to convert to a string. 
+# You cannot concatenate an integer data type into a string data type without converting the integer into a string data type.
+# You can use the int() function to convert to an integer from a string and use the str() function to convert to a string. 
 # ===============================================================
 # Example:
 
+variableWord = 'Word'
 variableNumber = 1
-print(str(variableNumber))
+
+variableWord + variableNumber #<---- Error
+
+print(variableWord + str(variableNumber)) #<--- evaluates to 'word1'
 
 player1Ammo = '8'
 player1Ammo = int(player1Ammo) - 3
 print(player1Ammo)
+
 # ===============================================================
 # String Imutability. Sequences fall into one or two categories. mutable or immutable. A sequence that is mutable is one that can change. 
 # A sequence that is immutable means unchangable so it is one that cannot change.
