@@ -510,11 +510,53 @@ with strPath.open(mode='r', encoding='utf-8') as fileObj:
     print(fileObj.read())
 
 # ===============================================================
-# 
+# Counting words in a file can be done with the split method where we put all the words into alist.
 # ===============================================================
 # Example
 
+def countWords(file, drive):
+    ''' count words in file'''
+    import pathlib
+    from pathlib import Path
+    rootPath = pathlib.Path(drive)
+    if not rootPath.exists():
+        driveNotFound = f'[-] {drive} does not exist. Cannot locate {file}'
+        return driveNotFound
+    else:
+        for searchPath in rootPath.rglob(file):
+            absPath = searchPath
+            if absPath.exists():
+                print(f'[+] located absolute path {absPath.parents[0]}')
+                print(f'[+] located file {file}')
+                print(f'[+] Counting words in {file}')
+                with absPath.open(mode='r', encoding='utf-8') as fileObj:
+                    countWords = fileObj.read().split()
+                    counted = f'[+] in {file} there is {len(countWords)} words'
+                    return counted
+        
+        fileNotFound = f'[-] {file} does not exist. Cannot locate {file} in {drive}'
+        return fileNotFound
 
+def callCountWords():
+    DRIVE_LETTERS = ['a','b','c','d',',e',
+        'f','g','h','i','j','k','l','m',
+        'n','o','p','q','r','s','t',
+        'u','v','w','x','y','z',
+        ]
+
+    userInputfile = ''
+    userInputDrive = ''
+
+    while not userInputfile and not userInputDrive:
+        userInputfile = input('Enter file name including suffix:>')
+        userInputDrive = input('Enter single drive letter the file can be located at:>').lower().strip()
+    while userInputDrive not in DRIVE_LETTERS:
+        userInputDrive = input('You have not entered a letter :>')
+    userInputDrive += ':/'
+    print(countWords(userInputfile, userInputDrive))
+
+
+callCountWords()
 
 #import os
 
