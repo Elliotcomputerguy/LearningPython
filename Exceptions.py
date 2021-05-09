@@ -3,7 +3,6 @@
 # Python exception objects are designed to manage errors that present themselves during the execution of a program. 
 # To ensure that your program does not crash you can create exception objects to handle errors and prevent tracebacks.
 # The try except blocks are used to handle exceptions. Your program will continue to run using the try except exception handlers. 
-# If you do not know what the python exception object will be you can just use the except keyword.
 # ===============================================================
 # Example
 
@@ -11,7 +10,7 @@ myString = 'string'
 myNumber = 1
 try:
     print(myString + myNumber)
-except: 
+except TypeError:
     print('Error, you cannot concatenate a str() to an int() data type. You must convert to str()') 
 
 # ===============================================================
@@ -25,7 +24,7 @@ intInput = None
 while not intInput:
     try:
         intInput = int(input('Enter a number:'))
-    except:
+    except TypeError:
         print('That was not a integer value?')
     else:
         print(f'{intInput} x 5 =', intInput * 5 )
