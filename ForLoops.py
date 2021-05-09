@@ -20,14 +20,78 @@
 # ===============================================================
 # Example:
 
+# iterate over a string
 for letter in 'ElliotComputerGuy':
     print('The letter is :', letter)
 
-# ===============================================================
-# Multiply numbers.
+# or
+
+# iterate over a file
+import pathlib
+path = pathlib.Path.home() / 'file.txt'
+path.touch()
+with path.open(mode='w', encoding='utf-8') as fileObj:
+    fileObj.writelines('hello world\nhello world')
+
+with path.open(mode='r', encoding='utf-8') as fileObj:
+    for line in fileObj.readlines():
+        print(line.rstrip())
 
 # ===============================================================
+# Just as in while loops the foor loop has the abiity to break out of the iteration cycle using the break statement. 
+# Again the break statment is used sparingly. Any for loop created can be created without one. 
+# ===============================================================
 # Example:
+
+NUMBERS = '1234567890'
+for index, number in enumerate(NUMBERS):
+    if number in NUMBERS:
+        print(number)
+        if index == 4:
+            break
+print('done')
+
+#or
+
+NUMBERS = '1234567890'
+for i in range(len(NUMBERS)):
+    if NUMBERS[i] in NUMBERS:
+        print(i)
+        if i >= 5:
+            break
+print('done')
+
+# ===============================================================
+#  As with the break statement you can also use the continue statement to skip any code below and go back to the top of the while loop.
+# ===============================================================
+# Example:
+
+NUMBERS = '1234567890'
+for i in range(len(NUMBERS)):
+    if NUMBERS[i] in NUMBERS:
+        print(i)
+        if i == 5:
+            continue
+        elif i >= 6:
+            break
+print('done')
+
+# ===============================================================
+# As in the if and elif you use the else statement to do something else if the if and elif statements are not True. You can
+# also use the else statement in the for loop. 
+# ===============================================================
+# Example:
+
+STRING = 'HELLO-WORLD'
+for i in STRING:
+    if i in STRING:
+        if i == 'A':
+            break
+else:
+    print(f'A was not in {STRING}')
+
+# ===============================================================
+
 
 num = input('Enter a number to multiply:')
 num = int(num)
@@ -76,3 +140,5 @@ for i in range(20, 0, -1):
 sneakers = ['Jordan 1 High\'s Bred', 'Nike Air Max 90', 'Yeezy v350 bred', 'Adidas pharrell Tennis Hu']
 for index, sneaker in enumerate(sneakers):
     print(f'Index {str(index)} in stock is {sneaker}')
+
+
