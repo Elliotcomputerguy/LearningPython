@@ -3,7 +3,7 @@
 # A string is a series of characters. Anything inside quotes are considered a string. All programs define and gather differnt types of data. 
 # There are many different data types. Strings are one of them.
 
-# When you create a string you can use '' or "" but not at the same time! You cannot start with " and end with '. 
+# When you create a string you can use '' or "" but not at the same time. You cannot start with " and end with '. 
 # The quotes around your strings are called delimiters. When you type them into your program they are called string literals. 
 # You can put '' inside of "" or put '' inside of "". You can also do the below but is not advisable. 
 # The aim is to make your code as conventional and clear as possible for other readers. 
@@ -25,7 +25,7 @@ print('this is a string' + ' ' + 'this is a string')
 print('this is a string', 'this is a string')
 
 # ===============================================================
-# You can achieve string replication with the * operator.
+# You can do string replication with the * operator.
 # The * operator can work with a string and integer data type value. It cannot work with two string values. 'Hello' * 'World'
 # ===============================================================
 # Example:
@@ -36,11 +36,11 @@ var = 'Hello world ' * 10
 print(var)
 
 var *= 10
-print(var)
+print(var * 10)
 
 # ===============================================================
-# Escape characters are used to enable us to print out characters that are difficult to type into
-# the source code. 
+# Python provides Escape characters to use when working with strings. 
+# ===============================================================
 
 #   \'	    Single Quote	
 #   \\	    Backslash	
@@ -58,9 +58,9 @@ print(var)
 print('\nthis is a new line,\tthis is a tab\nanother line')
 
 # ===============================================================
-# You can also add variables into your strings. This is known as string formatting or string interpolation. 
-# String interpolation is a process of injecting a value into a placeholder 
-# (a placeholder is nothing but a variable to which you can assign data/value later) in a string literal.
+# Adding variables into strings is known as string formatting or string interpolation. 
+# String interpolation is a process of injecting a value into a placeholder. 
+# A placeholder is nothing but a variable to which you can present a value in your string literal.
 # ===============================================================
 # Example:
 
