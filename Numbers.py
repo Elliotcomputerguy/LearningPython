@@ -189,3 +189,25 @@ mathVar = math.floor(5.5) # = 5
 print(mathVar)
 
 # ===============================================================
+# The pow() function allows you to raise a number to a power just as the mathematical ** power operator.
+# ===============================================================
+# Example:
+
+print(pow(2, 5)) # = 32
+
+# ===============================================================
+# The absolute value of a number is just the number if it is positive. Where as the number if negative
+# will be evaluate to a positive number. 
+# ===============================================================
+# Example:
+
+print(abs(-10))
+
+print(abs(10))
+
+# ===============================================================
+# 
+# ===============================================================
+# Example:
+
+
