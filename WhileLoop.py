@@ -8,7 +8,6 @@
 # If the condition evaluates to False then the programs execution
 # will skip the code in the block and will jump down to the next line outside of the block. 
 
-
 # A while statement is made of four parts:
 # 1 The while keyword
 # 2 An expression(also called a condition) that evaluates to the boolean values True or False
@@ -101,7 +100,7 @@ while response != 'batman':
     response = input('Guess what my name is:')
     if guessCount == 5:
         print('HINT: nananananana batman!')
-    guessCount += 1
+    guessCount += 1 # Here you could use continue statment instead of useing the guessCount variable
 print('nananananana batman!')
 
 # ===============================================================
