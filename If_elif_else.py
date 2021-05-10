@@ -35,8 +35,9 @@ else:
 #=================================================================#
 
 # ===============================================================
-# Just like while and for loops if statements can be nested in side one another to create complex conditional executions.
+# Just like the while and for loops, an if statements can be nested in side one another to create complex conditional executions.
 # ===============================================================
+# Example
 
 if True:
     print('do something')
@@ -57,3 +58,4 @@ elif True:
 else:
     print('do something else')
     
+# ===============================================================
