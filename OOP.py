@@ -38,19 +38,68 @@ class VirtualPet:
     ''' Virtual Pet ''' #<-- DocString 
 
     def __init__(self, name):
-        name.self = name
+        self.name = name
 
 # ===============================================================
 # Attributes created in a __init__() method are called instance attributes. An instance attribute's value is specific to a particular
 # instance of the class. Each instantiated object from the class VirtualPet does not have to have the same name. 
-# Below we are initalizing 
+# Below we have instantiated an object from the class VirtualPet and passing an argument to the name attribute. 
 # ===============================================================
 # Example:
 
-virtualPet1 = VirtualPet('Penguin')
+print('''
+
+    (\ (\\
+    ( -.-)     
+    O_('')('') 
+
+''')
+pet = VirtualPet('Jack the Hungry Rabbit')
+print(f'Hi my name is {pet.name}\n')
 
 # ===============================================================
-# Class attributes are attributes that have the same value for all class instances. You can define a class attribute by assigning 
+# Object methods are exactly the same as functions but associated with an object defined within a class and only invoked
+# from an object of that class. Just as with the constructor method all object methods must have the self parameter called self by convention
+# The special self parameter allows the method to reference the object. If you create a method without any parameters it will error when
+# called. 
+# ===============================================================
+# Example:
+
+class VirtualPet:
+    ''' Virtual Pet ''' #<-- DocString 
+
+    def __init__(self, name):
+        self.name = name
+
+    def enunciate(self, voice): #<-- Object method
+        return f'{voice}'
+
+print('''
+
+    (\ (\\
+    ( -.-)     
+    O_('')('') 
+
+''')
+
+pet = VirtualPet('Jack the Hungry Rabbit')
+print(f'Hi my name is {pet.name}\n')
+print(pet.enunciate('i am hungry and looking for some carrots! \n\nWill you help me find some carrots\n'))
+
+# =======================================================
+
+
+
+# Class attributes are attributes that have the same value for all class instances. 
+# 
+
+
+
+
+
+
+
+#You can define a class attribute by assigning 
 # a value to a variable name outsode of __init__(). 
 
 # Class attributes are defined directly beneath the first line of the class name. Class attributes are automatically created and assigne
