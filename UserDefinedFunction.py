@@ -186,7 +186,7 @@ print(Yes_Or_No(userQuestion))
 # [3] create a new file .py and import passwordCreator and then call it. 
 
 def passwordCreator():
-    from jumbleWord import jumbleWord
+   # from jumbleWord import jumbleWord
     ''' Generate a number of choice of randomized passwords with the choice of password length '''
     print('''
         
@@ -224,7 +224,7 @@ def jumbleWord(lengthNumber):
 
 # [3] Create a new file .py and add the below.
 
-from passwordCreator import passwordCreator
+# from passwordCreator import passwordCreator
 
 print(passwordCreator())
 
