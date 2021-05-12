@@ -5,6 +5,10 @@
 
 # When you create a string you can use '' or "" but not at the same time. You cannot start with " and end with '. 
 # The quotes around your strings are called delimiters. When you type them into your program they are called string literals. 
+# A string literal is a sequence of characters surrounded by quotes.
+# literal is a language-independent programming term. A literal is a succinct and easily visible way to write a value. 
+# For example, you could construct the value zero with int(), but 0 is much more convenient.
+# The literals include the string, unicode string, sets, Bool, integer, float, long, list, tuple and dictionary types
 # You can put '' inside of "" or put '' inside of "". You can also do the below but is not advisable. 
 # The aim is to make your code as conventional and clear as possible for other readers. 
 # ===============================================================
@@ -154,7 +158,8 @@ for letter in var:
     print(letter, end='')
 
 # ===============================================================
-# To get the length of a string you can use the len() function.
+# To get the length of a string you can use the len() function. The len function starts from 1 rather than 0 like the range() function.
+# There is alot more that can be done with strings and are covered in string methods.
 # ===============================================================
 # Example:
 
