@@ -112,6 +112,65 @@ print(exponent)
 # 2 ** 8 = 256
 
 # ===============================================================
+# A prime number is a whole number that cannot be made by multiplying other whole numbers.
+# if we can make it by multiplying other whole numbers it is a Composite Number And 1 is not prime and also not composite.
+# If you divide the number by 2 and are left with a remainder then it is a prime number. If it does not have a remainder it is a 
+# composite.
+# ===============================================================
+# Example:
+
+4 / 2 # = composite
+5 / 2 # = prime 
+6 / 2 # = composite
+7 / 2 # = prime 
+
+# ===============================================================
+# PrimeNumber application. Full application is in MyPythonApplications Git repo
+# ===============================================================
+# Example:
+
+def primeNumbers(maxCount, file):
+    # import pathlib, sys and time modules
+    import pathlib
+    ''' Count as many Prime numbers as you like, just give me a number to count to and a file to write to. ''' #<-- Doc String 
+    # initalize variables
+    iterator = 2 # iterator in while loop for prime 
+    primeList = [] # prime number list
+    compositeList = [] # non prime number list
+    # create absolute path
+    path = pathlib.Path.home() / file
+    # check if file exists. If user does not change value of file then use default parameter value.
+    if path.exists():
+        # if user does not specify a maxCount value. use default parameter value of 100.
+        while iterator <= maxCount:
+            # when you mod by 2 it only evaluates to either a 0 or 1.
+            # If it is a 0 it is not prime. If it is 1 it is prime.
+            if iterator % 2 == 0:
+                compositeList.append(iterator)
+                iterator += 1
+            else:
+                primeList.append(iterator)
+                iterator += 1
+        # insert -1 into the list on every iteration of 10 with for loop.
+        for i in range(0, maxCount, 11):
+            primeList.insert(i, -1)
+        # convert list into string and repalce -1 with a new line break and remove commas and brackets.
+        primeList = ''.join(str(primeList)).replace('-1', '\n').replace(',', '').replace('[', '').replace(']','').strip()
+        # insert -1 into the list on every iteration of 10
+        for i in range(0, maxCount, 11):
+            compositeList.insert(i, -1) 
+        # convert list into string and repalce -1 with a new line break and remove commas and brackets.
+        compositeList = ''.join(str(compositeList)).replace('-1', '\n').replace(',', '').replace('[', '').replace(']','').strip()
+        with path.open(mode='w', encoding='utf-8') as fileObject:
+            fileObject.write(f'\n\t\tPrime Numbers\n\n{primeList}\n\n\t\tComposite\n\n{compositeList}')
+            completed = f'[+] prime numbers and composite numbers have been created up to {maxCount}'
+        return completed
+    else:
+        return f'[-] Could not locate {file}. Exiting...'
+
+print(primeNumbers(100, 'PrimeNumberFile.txt'))
+
+# ===============================================================
 # Underscores in numbers are useful when writing long numbers to be more readable.
 # ===============================================================
 # Example:
