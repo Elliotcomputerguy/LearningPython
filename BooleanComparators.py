@@ -28,6 +28,8 @@
 'b' > 'a' # = True
 'Space' > 'Mars' # = True
 'Boolean' > 'Basketball' # = True
+True > False # = True
+True < False # = False
 
 # ===============================================================
 # Strings are ordered lexicographically. A comes before b and c after b. Therefore a is not greater than b. But is less than b. 
