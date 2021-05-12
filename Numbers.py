@@ -79,6 +79,14 @@ print(var)
 # You then multiply the evaluated value of 5 - 1 and the evaluated value from the division of 7 + 1 and 3 - 1. 
 # You then add 7 to the evlauted value from the multiplication.
 
+(5 * ((25 % 13) + 100) / (2 * 13)) // 2
+
+# Start with (25 % 13) = 12
+# Add a 100 = 112 and multiply by 5 = 560
+# complete (2 * 13) = 26
+# divide 560 by 26 = 21.xxxxxxx
+# finish off by dividing with the floor operator 21 // 2 = 10.0
+
 # ===============================================================
 # The exponent of a number says how many times to use the number in a multiplication.
 # ===============================================================
@@ -96,6 +104,12 @@ print(exponent)
 
 exponent = 5 ** 3
 print(exponent)
+
+# The exponentiation operator uses right-sided binding.
+2 ** 2 ** 3 # = 256
+
+# 2 ** 3 = 8
+# 2 ** 8 = 256
 
 # ===============================================================
 # Underscores in numbers are useful when writing long numbers to be more readable.
