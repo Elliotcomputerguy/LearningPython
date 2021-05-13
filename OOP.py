@@ -1,5 +1,4 @@
 
-
 # Object-oriented programming basic building blocks consist of objects. Classes define the data structure which identify
 # behaviours that an object can perform with its defined data. They are the blue prints that design the object. 
 # OOP allows you to represent real life objects as software objects. Software objects combine attributes and methods. 
@@ -18,12 +17,12 @@
 # ===============================================================
 # Example:
 
-class VirtualPet:
-    ''' Virtual Pet ''' #<-- DocString 
+class PetRabbit:
+    ''' Virtual Pet Rabbit''' #<-- DocString 
     pass
 
 # ===============================================================
-# The first thing you do inside of a class is define a constructor method also called a initialization method. 
+# The first thing you would usually do inside of a class is define a constructor method also called a initialization method. 
 # The constructor method is automatically called when an object from the class is instantiated. The constructor method 
 # definines the attributes of the object. The built-in __init__() is a specific method name understood by Python. 
 # Python has a collection of built-in special methods that begin with two underscores and end with two underscores. 
@@ -34,49 +33,113 @@ class VirtualPet:
 # ===============================================================
 # Example:
 
-class VirtualPet:
-    ''' Virtual Pet ''' #<-- DocString 
+class PetRabbit:
+    ''' Virtual Pet Rabbit ''' #<-- DocString 
 
     def __init__(self, name):
-        name.self = name
+        self.name = name
 
 # ===============================================================
 # Attributes created in a __init__() method are called instance attributes. An instance attribute's value is specific to a particular
-# instance of the class. Each instantiated object from the class VirtualPet does not have to have the same name. 
-# Below we are initalizing 
+# instance of the class. Each instantiated object from a class does not have to have the same values. 
+# Below we have instantiated an object from the class PetRabbit and passing an argument to the name attribute. 
 # ===============================================================
 # Example:
 
-virtualPet1 = VirtualPet('Penguin')
+print('''
+
+    (\ (\\
+    ( -.-)     
+    O_('')('') 
+
+''')
+rabbit = PetRabbit('Danny the Hungry Rabbit')
+print(f'Hi my name is {rabbit.name}\n')
 
 # ===============================================================
-# Class attributes are attributes that have the same value for all class instances. You can define a class attribute by assigning 
-# a value to a variable name outsode of __init__(). 
+# Object methods are exactly the same as functions but associated with an object defined within a class and only invoked
+# from an object of that class. Just as with the constructor method all object methods must have the self parameter called self by convention
+# The special self parameter allows the method to reference the object. If you create a method without any parameters it will error when
+# called.
+# ===============================================================
+# Example:
 
-# Class attributes are defined directly beneath the first line of the class name. Class attributes are automatically created and assigne
-# their initial values. 
+class PetRabbit:
+    ''' Virtual Pet Rabbit''' #<-- DocString 
 
-# Use class attributes to define properties that should have the same value for every class instance. Use instance attributes for 
-# properties that vary from one to another. 
+    def __init__(self, name): #<-- Constructor method
+        self.name = name
 
-# Creating a new object from a class is called instantiating an object. You can instantiate a new object by typing the name of the 
-# class followed by opening and closing parentheses.
+    def enunciate(self, voice): #<-- Object method
+        return f'{voice}'
 
-# You need to provide arguments for the parameters in the __init__ method. A TypeError will be raised if not assigned. The first parameter
-# 'self' is removed when a new instance is created. 
+print('''
+
+    (\ (\\
+    ( -.-)     
+    O_('')('') 
+
+''')
+
+rabbit = PetRabbit('Danny the Hungry Rabbit') #<-- Instantiating an object from the class PetRabbit
+print(f'Hi my name is {rabbit.name}\n') #<-- calling the attribute on the constructor method to initialize the name parameter.
+print(rabbit.enunciate('I am hungry and looking for some carrots! \n\nWill you help me find some carrots\n')) #<-- Invoking method enunciate
+
+# =======================================================
+# When you print the object print(rabbit) you receive a memory location. <__main__.PetRabbit object at 0x000001A1CF0A4FD0>
+# It does not return any useful information on the object. 
+# Using the special method __str__() in a class definition to make a string representation for the object that will be displayed
+# when invoked. It is considered good practice to create a __str__() method to help see an objects attributes.
+# ===============================================================
+# Example:
+
+class PetRabbit:
+    ''' Virtual Pet Rabbit''' #<-- DocString 
+
+    def __init__(self, name): #<-- Constructor method
+        self.name = name
+
+    def enunciate(self, voice): #<-- Object method
+        return f'{voice}'
+
+    def __str__(self):          #<-- String method to return name attribute 
+        classObject = 'PetRabbit Object\n'
+        classObject += f'Name: {self.name}'
+        return classObject
 
 
+rabbit = PetRabbit('Danny the Hungry Rabbit') #<-- Instantiating an object from the class PetRabbit
+print(rabbit) #<-- making a call to the __str__() method
 
-# After you create the instance from your class. You can access the instance attributes using dot notation.
+# ===============================================================
+# Class attributes are attributes that have the same value for all class instances. So if we wanted any class object created to only be 
+# alive for 30 days we would create that as a class attribute.  
+# ===============================================================
+# Example:
+
+class PetRabbit:
+    ''' Virtual Pet Rabbit''' #<-- DocString 
+
+    classObjectLife = 0 #<-- Class attribute
+
+    def __init__(self, name): #<-- Constructor method
+        self.name = name
+        # when object is instantiated get date and time and write it to a json file
+        # once 30 days have been reached the pet rabbit goes to bunny heaven 
+
+    def enunciate(self, voice): #<-- Object method
+        return f'{voice}'
+
+    def __str__(self):          #<-- String method to return name attribute 
+        classObject = 'PetRabbit Object\n'
+        classObject += f'Name: {self.name}'
+        return classObject
 
 
+rabbit = PetRabbit('Jack the Hungry Rabbit') #<-- Instantiating an object from the class PetRabbit
+print(rabbit.classObjectLife)
 
-# You can access the class attributes the same way. 
+# ===============================================================
+# Example:
 
 
-
-# Classes will always have the attributes you expect. There values can also be modified dynamically. Custom objects are mutable. 
-
-
-# Instance methods are defined inside a class and can onlt be called from an instance of that class. Just like __init__(),
-# An instance method is always self.
