@@ -171,7 +171,7 @@ print(Yes_Or_No(userQuestion))
 # You save your functions to seperate .py files in the same directory to the py file you call the modules from. You would type the 
 # import statement as you would if you were importing math or range. Python would read the line and open the file and copy the functions
 # across making it available. When calling the function from the imported module you would enter the name of the module that 
-#  you imported followed by the name of the function, seperated by a dot. moduleName.functionName() 
+# you imported followed by the name of the function, seperated by a dot. moduleName.functionName() 
 # The second method is to import a specific function from the module. At the top of your program that you wish to import
 # the modules into. You would type 'from moduleName import functionName' You can import as you want by sperating by a comma. 
 # Using this syntax you do not need to use the dot notation when you call a function. Because we have explicitly imported the function.

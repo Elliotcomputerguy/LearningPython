@@ -559,8 +559,8 @@ def callCountWords():
 callCountWords()
 
 # ===============================================================
-# Use json modules to store data in json format. The json.dump() allows you to share data wit other programs.
-# the json module uses two arguments to store data.   
+# json modules allow you to store data in json format using json.dump(). 
+# Reading and storing the list data from the file back into memory use json.load()   
 # ===============================================================
 # Example
 
@@ -576,6 +576,42 @@ with pathObject.open(mode='w', encoding='utf-8') as fileObject:
 with pathObject.open(mode='r', encoding='utf-8') as fileObject:
     jsonData = json.load(fileObject)
 
-print(jsonData)
+NewListOfNumbers = list(jsonData)
+print(NewListOfNumbers[0])
+
+# ===============================================================
+# writing a list to a file and reading the list back into memory stored in a new list variable using readlines and writelines. 
+# ===============================================================
+# Example
+
+import pathlib
+
+places = ['Berlin', 'Cape Town', 'Sydney', 'Moscow']
+
+path = pathlib.Path.home() / 'listfile.txt'
+if not path.exists():
+    path.touch()
+
+with path.open(mode='w', encoding='utf-8') as fileObject:
+    for listitem in places:
+        fileObject.write(f'{listitem}\n')
+
+# define an empty list
+Newplaces = []
+
+# open file and read the content in a list
+path = pathlib.Path.home() / 'listfile.txt'
+if not path.exists():
+    path.touch()
+
+with path.open(mode='r', encoding='utf-8') as fileObject:
+
+    for line in fileObject.readlines():
+        # remove linebreak which is the last character of the string
+        currentPlace = line[:-1]
+
+        # add item to the list
+        Newplaces.append(currentPlace)
+print(Newplaces)
 
 # ===============================================================
