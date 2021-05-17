@@ -53,7 +53,7 @@ print('''
     O_('')('') 
 
 ''')
-rabbit = PetRabbit('Danny the Hungry Rabbit')
+rabbit = PetRabbit('Danny')
 print(f'Hi my name is {rabbit.name}\n')
 
 # ===============================================================
@@ -81,7 +81,7 @@ print('''
 
 ''')
 
-rabbit = PetRabbit('Danny the Hungry Rabbit') #<-- Instantiating an object from the class PetRabbit
+rabbit = PetRabbit('Danny') #<-- Instantiating an object from the class PetRabbit
 print(f'Hi my name is {rabbit.name}\n') #<-- calling the attribute on the constructor method to initialize the name parameter.
 print(rabbit.enunciate('I am hungry and looking for some carrots! \n\nWill you help me find some carrots\n')) #<-- Invoking method enunciate
 
@@ -108,24 +108,24 @@ class PetRabbit:
         return classObject
 
 
-rabbit = PetRabbit('Danny the Hungry Rabbit') #<-- Instantiating an object from the class PetRabbit
+rabbit = PetRabbit('Danny') #<-- Instantiating an object from the class PetRabbit
 print(rabbit) #<-- making a call to the __str__() method
 
 # ===============================================================
-# Class attributes are attributes that have the same value for all class instances. So if we wanted any class object created to only be 
-# alive for 30 days we would create that as a class attribute.  
+# Class attributes are attributes that have the same value for all class instances. 
 # ===============================================================
 # Example:
 
 class PetRabbit:
     ''' Virtual Pet Rabbit''' #<-- DocString 
 
-    classObjectLife = 0 #<-- Class attribute
+    classObject = 0 #<-- Class attribute
+
+    @staticmethod
 
     def __init__(self, name): #<-- Constructor method
         self.name = name
-        # when object is instantiated get date and time and write it to a json file
-        # once 30 days have been reached the pet rabbit goes to bunny heaven 
+        # when object is instantiated get date and name and write it to a json file        
 
     def enunciate(self, voice): #<-- Object method
         return f'{voice}'
@@ -136,7 +136,7 @@ class PetRabbit:
         return classObject
 
 
-rabbit = PetRabbit('Jack the Hungry Rabbit') #<-- Instantiating an object from the class PetRabbit
+rabbit = PetRabbit('Danny') #<-- Instantiating an object from the class PetRabbit
 print(rabbit.classObjectLife)
 
 # ===============================================================
