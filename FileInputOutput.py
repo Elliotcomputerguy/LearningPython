@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+# ===============================================================
 # When reading or writing to a file with python you will need to tell python the path to the file. You can either pass the 
 # absolute path which is from the root or you can use a relative path if the file is stored in the same directory as the python 
 # program. There are more than one way to create path objects. You can use a string, use classes or use operator /. 
